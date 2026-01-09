@@ -4,62 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    
+    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
+    
     <style>
-        /* This section controls the look and feel */
+        /* --- CSS STYLES START HERE --- */
+        
+        /* 1. General Body Settings */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
+            /* This is the magic line that applies the LaTeX font */
+            font-family: 'Computer Modern Serif', serif; 
+            
+            background-color: #f4f4f4; /* Light grey background */
+            color: #222; /* Almost black, like ink */
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            line-height: 1.6;
+            font-size: 18px; /* LaTeX font tends to run small, so we bump it up slightly */
         }
+
+        /* 2. The Main Container (Paper look) */
         .container {
+            max-width: 750px; /* Slightly narrower, like a sheet of A4 paper */
+            margin: 60px auto; 
             background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 600px;
-            text-align: center;
+            padding: 50px 60px; /* Generous margins like a paper */
+            border: 1px solid #d3d3d3; /* Thin border */
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.05); /* Very subtle shadow */
         }
+
+        /* 3. Header Section */
+        header {
+            text-align: center;
+            border-bottom: 1px solid #aaa; /* Thinner, darker line */
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
         h1 {
             margin-top: 0;
-            color: #2c3e50;
+            color: #000;
+            font-size: 2.8rem;
+            font-weight: bold; /* LaTeX titles are usually bold */
+            letter-spacing: -0.5px; /* Tights it up slightly */
         }
-        p {
-            color: #666;
-            line-height: 1.6;
+
+        .subtitle {
+            color: #444;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-style: italic; /* Italics look great in this font */
         }
-        .button {
+
+        /* 4. Button Styles (kept clean) */
+        .btn {
             display: inline-block;
-            background-color: #0366d6; /* GitHub Blue */
+            background-color: #000; /* Academic black */
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 3px; /* Sharper corners */
             font-weight: bold;
-            margin-top: 20px;
-            transition: background-color 0.2s;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+            margin-top: 10px;
         }
-        .button:hover {
-            background-color: #024ea4;
+
+        .btn:hover {
+            opacity: 0.8; /* Simple fade effect */
         }
+
+        /* 5. Projects Section */
+        h2 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+
+        .project-card {
+            margin-bottom: 30px; 
+            padding-left: 15px;
+            border-left: 3px solid #eee; /* A subtle sidebar instead of a box */
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        
+        a {
+            color: #0000AA; /* Classic hyperlink blue */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* --- CSS STYLES END HERE --- */
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>My Academic Portfolio</h1>
         
-        <p>
-            Welcome to my personal archive. Here you will find my academic notes, 
-            research summaries, and coding projects.
-        </p>
+        <header>
+            <h1>[Your Name Here]</h1>
+            <p class="subtitle">Student | Developer | Researcher</p>
+            <p>
+                Welcome. This portfolio is a collection of my work in theoretical physics 
+                and computer science. My focus is on computational modeling and 
+                mathematical problem solving.
+            </p>
+            
+            <a href="EnglishCV9-01-2026.pdf" class="btn" target="_blank">Download CV (PDF)</a>
+        </header>
 
-        <a href="EnglishCV9-01-2026.pdf" class="button" target="_blank">📄 Download My CV</a>
+        <h2>Selected Projects</h2>
+
+        <div class="project-card">
+            <div class="project-title">General Relativity Notes</div>
+            <p>
+                A comprehensive derivation of the Schwarzschild Metric and study notes on 
+                curved spacetime. 
+            </p>
+            <p style="font-size: 0.9rem; color: #666;">
+                <em>Keywords: Differential Geometry, Einstein Equations, LaTeX</em>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Java Banking System</div>
+            <p>
+                A command-line application simulating a secure bank account system, 
+                demonstrating OOP principles.
+            </p>
+            <p style="font-size: 0.9rem; color: #666;">
+                <em>Keywords: Java, Polymorphism, Data Structures</em>
+            </p>
+        </div>
+
     </div>
 
 </body>
