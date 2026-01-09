@@ -1,0 +1,127 @@
+/* --- UNIVERSAL SETTINGS --- */
+body {
+    font-family: 'Computer Modern Serif', serif; 
+    background-color: #f4f4f4;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    background-color: #222; /* Dark bar */
+    color: white;
+    padding: 15px 0;
+    margin-bottom: 40px;
+}
+
+.nav-container {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.829);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.687);
+    text-decoration: underline;
+}
+
+/* --- MAIN LAYOUT --- */
+.container {
+    max-width: 750px;
+    margin: 0 auto 60px auto; 
+    background: white;
+    padding: 50px 60px;
+    border: 1px solid #d3d3d3;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- HEADERS --- */
+header {
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #000;
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: #444;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+h2 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    margin-top: 40px;
+    font-size: 1.8rem;
+}
+
+/* --- BUTTONS & LINKS --- */
+.btn {
+    display: inline-block;
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: opacity 0.2s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+a {
+    color: #0000AA;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- PROJECTS --- */
+.project-card {
+    margin-bottom: 30px; 
+    padding-left: 15px;
+    border-left: 3px solid #eeeeeedc;
+}
+
+.project-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #000;
+    margin-bottom: 5px;
+}
