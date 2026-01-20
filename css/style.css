@@ -1,32 +1,35 @@
 /* =========================================
    1. GLOBAL VARIABLES & RESET
    ========================================= */
+
+/* --- ADD THIS (CRITICAL FIX) --- */
+* {
+    box-sizing: border-box;
+}
+
 :root {
-    /* --- ELEGANT ACADEMIC PALETTE --- */
-    
-    /* ACCENT: "Champagne Gold" (Classy, not neon) */
+    /* (Keep your existing colors exactly the same) */
     --accent-color: #dcd0b3; 
-    
-    /* BACKGROUNDS: Rich Slate (Not pure black) */
     --bg-dark: #18181b;      
-    --bg-paper: #131316;     /* Slightly lighter for the "page" */
-    
-    /* TEXT: Soft White & Grey */
+    --bg-paper: #131316;     
     --text-main: #f4f4f5;    
     --text-muted: #a1a1aa;   
-    
     --border-color: #2a2a30; 
 }
 
 body {
-    /* "Spotlight" Gradient: Glows slightly in the center */
     background: radial-gradient(circle at top, #1e1e24 0%, #0f0f12 100%);
     color: var(--text-main);
     font-family: 'Computer Modern Serif', serif; 
     margin: 0;
     padding: 0;
     line-height: 1.7;
-    min-height: 100vh; /* Ensures gradient fills screen */
+    min-height: 100vh;
+    
+    /* --- ADD THIS (PREVENTS SIDE SCROLL) --- */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* =========================================
@@ -175,18 +178,23 @@ h1 {
 }
 
 /* =========================================
-   4. EDUCATION HUB (Split Layout)
+   4. EDUCATION HUB (Stacked Pillar Layout)
    ========================================= */
 .level-split {
     display: flex;
-    justify-content: center;
-    gap: 4rem;
-    margin-top: 2rem;
+    flex-direction: column; /* Force vertical stacking everywhere */
+    gap: 4rem;              /* Space between the two big sections */
+    
+    /* Center the pillar */
+    width: 100%;
+    max-width: 800px;       /* Keeps it readable on Desktop */
+    margin: 3rem auto;      /* Top/Bottom margin, Center Left/Right */
+    padding: 0 25px;        /* Safety padding for mobile edges */
 }
 
 .level-column {
-    flex: 1;
-    max-width: 400px;
+    width: 100%;            /* Fill the pillar width */
+    max-width: 100%;        /* Remove the old 400px limit */
 }
 
 .level-column h2 {
@@ -219,9 +227,9 @@ h1 {
     transform: translateX(5px);
 }
 
+/* Hide the vertical line since we are stacking now */
 .vertical-divider {
-    width: 1px;
-    background: #333;
+    display: none;
 }
 
 /* =========================================
@@ -404,6 +412,4 @@ h1 {
 
     /* Grid & Split */
     .topic-grid { grid-template-columns: 1fr; }
-    .level-split { flex-direction: column; gap: 2rem; }
-    .vertical-divider { display: none; }
 }
