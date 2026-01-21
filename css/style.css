@@ -178,58 +178,128 @@ h1 {
 }
 
 /* =========================================
-   4. EDUCATION HUB (Stacked Pillar Layout)
+   4. THE ARCHIVE (The Premium Journal Look)
    ========================================= */
-.level-split {
+
+.archive-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 25px 80px 25px;
+}
+
+/* Section Headers (e.g. "Theoretical Physics") */
+.archive-section {
+    margin-bottom: 70px; /* Big spacing between categories */
+}
+
+.archive-header {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+    opacity: 0.9;
+}
+
+/* The List Container */
+.journal-table {
     display: flex;
-    flex-direction: column; /* Force vertical stacking everywhere */
-    gap: 4rem;              /* Space between the two big sections */
-    
-    /* Center the pillar */
-    width: 100%;
-    max-width: 800px;       /* Keeps it readable on Desktop */
-    margin: 3rem auto;      /* Top/Bottom margin, Center Left/Right */
-    padding: 0 25px;        /* Safety padding for mobile edges */
+    flex-direction: column;
+    gap: 0; /* No gap, we use borders */
 }
 
-.level-column {
-    width: 100%;            /* Fill the pillar width */
-    max-width: 100%;        /* Remove the old 400px limit */
-}
-
-.level-column h2 {
-    color: var(--text-main);
-    border-bottom: 1px solid #333;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.level-desc {
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-}
-
-.topic-link {
-    display: block;
-    padding: 1rem;
-    background: var(--bg-paper);
-    color: var(--text-main);
+/* INDIVIDUAL ENTRY (The Row) */
+.journal-row {
+    display: flex;
+    align-items: center; /* Vertically center everything */
+    padding: 25px 20px;
+    border-bottom: 1px solid #1f1f23; /* Very subtle divider */
     text-decoration: none;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
     transition: all 0.2s ease;
+    border-left: 3px solid transparent; /* Invisible border for hover effect */
+    background: linear-gradient(90deg, transparent 0%, transparent 100%);
 }
 
-.topic-link:hover {
-    border-color: var(--accent-color);
-    transform: translateX(5px);
+/* HOVER EFFECT: This removes the "Plain" feeling */
+.journal-row:hover {
+    background: linear-gradient(90deg, rgba(220, 208, 179, 0.03) 0%, transparent 100%);
+    border-left-color: var(--accent-color); /* Gold accent appears on left */
+    padding-left: 30px; /* Slight shift to the right */
 }
 
-/* Hide the vertical line since we are stacking now */
-.vertical-divider {
-    display: none;
+/* Column 1: The Year */
+.journal-date {
+    flex: 0 0 70px;
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+/* Column 2: Title & Tags */
+.journal-info {
+    flex: 1;
+}
+
+.journal-title {
+    display: block;
+    color: var(--text-main);
+    font-size: 1.2rem; /* Larger, academic size */
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+    font-family: 'Computer Modern Serif', serif; /* Your signature font */
+}
+
+.journal-row:hover .journal-title {
+    color: var(--accent-color);
+}
+
+/* The Tags (Badges) */
+.journal-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.journal-tags span {
+    font-size: 0.7rem;
+    color: #888;
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+}
+
+/* Make tags pop slightly on hover */
+.journal-row:hover .journal-tags span {
+    border-color: #333;
+    background: #000;
+}
+
+/* Column 3: The Icon Arrow */
+.journal-icon {
+    color: var(--accent-color);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.journal-row:hover .journal-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 600px) {
+    .journal-row { flex-wrap: wrap; padding: 20px 10px; }
+    .journal-date { width: 100%; margin-bottom: 5px; font-size: 0.8rem;}
+    .journal-title { font-size: 1.1rem; }
 }
 
 /* =========================================
@@ -412,4 +482,166 @@ h1 {
 
     /* Grid & Split */
     .topic-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   PROJECTS PAGE STYLING (Updated for Images)
+   ========================================= */
+
+/* The Card Container */
+.project-card {
+    display: flex; /* Side-by-side layout on Desktop */
+    background: var(--bg-paper);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 3rem; /* Space between projects */
+    overflow: hidden; /* Clips the image corners */
+    transition: transform 0.2s, border-color 0.2s;
+    
+    /* Ensures the card has a fixed height structure on desktop */
+    min-height: 280px; 
+}
+
+.project-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* 1. The Visual Side (Container for the Image) */
+.project-visual {
+    /* Fixed width on desktop ensures text doesn't squish the image */
+    flex: 0 0 320px; 
+    background: #000;
+    border-right: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden; /* Required for the zoom effect */
+}
+
+/* 2. The Actual Image Styling */
+.project-img {
+    width: 100%;
+    height: 100%;
+    
+    /* CRITICAL: This acts like 'background-size: cover' */
+    /* It crops the image slightly to fill the space without stretching */
+    object-fit: cover; 
+    object-position: center top; /* Focuses on the top of your screenshot (usually the header) */
+    
+    display: block;
+    transition: transform 0.5s ease; /* Slow, smooth zoom */
+}
+
+/* Optional: Gentle Zoom effect when hovering the card */
+.project-card:hover .project-img {
+    transform: scale(1.03);
+}
+
+/* 3. The Content Side (Right) */
+.project-content {
+    flex: 1; /* Fills the rest of the space */
+    padding: 30px 40px; /* More breathing room */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the text */
+}
+
+/* Typography & Badges */
+.project-header h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.tech-stack {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    background: rgba(220, 208, 179, 0.08); /* Very subtle gold tint */
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    letter-spacing: 0.5px;
+}
+
+.project-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Text Links */
+.project-links {
+    margin-top: auto; /* Pushes links to the bottom if content is short */
+}
+
+.btn-text {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 25px;
+    position: relative;
+    transition: opacity 0.2s;
+}
+
+.btn-text:hover {
+    opacity: 0.8;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Projects)
+   ========================================= */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column; /* Stack vertically */
+        min-height: auto; /* Remove fixed height constraint */
+    }
+
+    .project-visual {
+        flex: none; /* Reset the fixed width */
+        width: 100%;
+        height: 200px; /* Force a visible height for the image */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .project-img {
+        height: 100%; /* Fills the 200px container */
+        object-position: top center; /* Keeps the top of the image visible */
+    }
+
+    .project-content {
+        padding: 25px 20px;
+    }
+    
+    .project-header h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation for Pareto Points */
+.pareto-points circle {
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+/* Stagger the animation so they don't blink in unison */
+.pareto-points circle:nth-child(1) { animation-delay: 0s; }
+.pareto-points circle:nth-child(2) { animation-delay: 0.5s; }
+.pareto-points circle:nth-child(3) { animation-delay: 1s; }
+.pareto-points circle:nth-child(4) { animation-delay: 1.5s; }
+.pareto-points circle:nth-child(5) { animation-delay: 2s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; r: 2.5; }
+    50% { opacity: 1; r: 3; }
 }
