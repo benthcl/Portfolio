@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerospace Engineering | Ben Thomas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="analysis.html" class="nav-logo"><i class="fas fa-arrow-left"></i> Analysis</a>
+            <div class="nav-links">
+                <a href="computational.html">Code</a>
+                <a href="analysis.html" class="active">Analysis</a>
+                <a href="cv.html">CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Aerospace & Systems</h1>
+        <p class="subtitle">Engineering Design & Physics</p>
+        <p class="hero-text">
+            A portfolio of engineering projects ranging from large-scale infrastructure design 
+            and fluid mechanics to signal processing and information theory.
+        </p>
+    </header>
+
+    <main class="main-container">
+        <span class="section-label">Selected Reports</span>
+
+         <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <path d="M0,50 Q100,40 320,20" fill="none" stroke="#333" stroke-width="1"/>
+                    <path d="M0,80 Q100,60 320,50" fill="none" stroke="#333" stroke-width="1"/>
+                    <path d="M0,110 Q50,100 100,90 Q150,80 320,110" fill="none" stroke="#dcd0b3" stroke-width="2"/> 
+                    <path d="M0,130 Q100,140 320,150" fill="none" stroke="#333" stroke-width="1"/>
+                    <path d="M50,110 Q100,80 250,120 Q100,130 50,110 Z" fill="#222" stroke="#dcd0b3" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Fluid Mechanics & Aerodynamics</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Navier-Stokes</span>
+                        <span class="badge">Boundary Layer</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Comprehensive technical documentation of fluid flow principles. 
+                    Includes theoretical derivations of Navier-Stokes equations, potential flow, 
+                    and aerodynamic boundary layer theory.
+                </p>
+                <div class="project-links">
+                    <a href="pdfs/FluidMechanics.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <rect x="20" y="80" width="280" height="40" fill="#111" stroke="#333"/>
+                    <rect x="40" y="90" width="240" height="20" fill="#333"/>
+                    <line x1="50" y1="100" x2="270" y2="100" stroke="#dcd0b3" stroke-width="2" stroke-dasharray="10,10"/>
+                    <path d="M45,92 L45,108 M275,92 L275,108" stroke="#dcd0b3" stroke-width="2"/>
+                    <path d="M100,110 L100,160 M220,110 L220,160" stroke="#222" stroke-width="15"/>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Airport Engineering: Design & Optimization</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Civil Engineering</span>
+                        <span class="badge">ICAO Regulations</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Full-scale design of a Category 3C airport handling 6 operations/hour. 
+                    Includes runway orientation analysis (Wind Rose), airside dimensioning, 
+                    and terminal process flow optimization based on ICAO Annex 14 standards.
+                </p>
+                <div class="project-links">
+                    <a href="pdfs/AirportDesign.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Design Paper
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <line x1="40" y1="20" x2="40" y2="180" stroke="#333" stroke-width="1"/>
+                    <line x1="40" y1="180" x2="300" y2="180" stroke="#333" stroke-width="1"/>
+                    <path d="M40,30 Q100,40 300,180" fill="none" stroke="#dcd0b3" stroke-width="2"/>
+                    <path d="M40,50 Q120,60 260,180" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4,4"/>
+                    <text x="80" y="40" fill="#dcd0b3" font-size="10" font-family="sans-serif">BER</text>
+                    <text x="250" y="170" fill="#dcd0b3" font-size="10" font-family="sans-serif">SNR</text>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Aeronautical Communications & Error Control</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Hamming Codes</span>
+                        <span class="badge">Reed-Solomon</span>
+                        <span class="badge">Info Theory</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Mathematical analysis of error detection and correction algorithms in digital 
+                    communications. Explored Hamming distance, parity redundancy, and 
+                    Reed-Solomon polynomial interpolation[cite: 2842, 3106, 3110].
+                </p>
+                <div class="project-links">
+                    <a href="pdfs/ErrorControlSystems.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Paper
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
