@@ -645,3 +645,28 @@ h1 {
     0%, 100% { opacity: 0.6; r: 2.5; }
     50% { opacity: 1; r: 3; }
 }
+
+/* =========================================
+   7. UTILITY CLASSES (Add these at the bottom)
+   ========================================= */
+
+/* Use this for the Analysis Hub Cards to center icons/text */
+.center-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.center-card-content .card-icon {
+    font-size: 2.5rem; /* Larger icons for the Hub */
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+/* Fix for PDF Icons in buttons */
+.btn-text i {
+    margin-right: 8px;
+}

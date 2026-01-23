@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optics Research | Ben Thomas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="analysis.html" class="nav-logo"><i class="fas fa-arrow-left"></i> Analysis</a>
+            <div class="nav-links">
+                <a href="projects.html">Code</a>
+                <a href="analysis.html" class="active">Analysis</a>
+                <a href="cv.html">CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Optics & Photonics</h1>
+        <p class="subtitle">Experimental Research & Metrology</p> <p class="hero-text">
+            Rigorous experimental analysis of wave phenomena, utilizing non-linear regression 
+            and precision metrology to validate theoretical models of interference, diffraction, and polarization.
+        </p>
+    </header>
+
+    <main class="main-container">
+        <span class="section-label">Selected Reports</span>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200">
+                    <rect width="100%" height="100%" fill="#0a0a0a" />
+                    <g transform="translate(160, 100)">
+                        <circle cx="0" cy="0" r="10" fill="none" stroke="#dcd0b3" stroke-width="2" opacity="1.0"/>
+                        <circle cx="0" cy="0" r="30" fill="none" stroke="#dcd0b3" stroke-width="2.5" opacity="0.8"/>
+                        <circle cx="0" cy="0" r="55" fill="none" stroke="#dcd0b3" stroke-width="3" opacity="0.6"/>
+                        <circle cx="0" cy="0" r="85" fill="none" stroke="#dcd0b3" stroke-width="3.5" opacity="0.4"/>
+                        <circle cx="0" cy="0" r="120" fill="none" stroke="#dcd0b3" stroke-width="4" opacity="0.2"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Michelson Interferometry</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Metrology</span>
+                        <span class="badge">Sodium Doublet</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Precision wavelength calculation ($\lambda = 600 \pm 40$ nm) and determination of 
+                    the Sodium D-line doublet splitting ($\Delta\lambda \approx 0.6$ nm) via 
+                    interference ring collapse analysis.
+                </p>
+                <div class="project-links">
+                    <a href="assets/docs/ÒpticaMichelson.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <path d="M0,180 L320,180 M160,0 L160,200" stroke="#222" stroke-width="1"/>
+                    <path d="M0,178 Q20,178 30,170 Q40,150 50,178 Q70,178 80,160 Q90,110 110,178 Q130,178 160,10 Q190,178 210,178 Q230,110 240,160 Q250,178 270,178 Q280,150 290,170 Q300,178 320,178" 
+                          fill="none" stroke="#dcd0b3" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Fraunhofer Diffraction Analysis</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Fourier Optics</span>
+                        <span class="badge">CCD Analysis</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Analysis of diffraction patterns from rectangular and circular apertures. 
+                    Validated the Fourier transform relationship between aperture geometry and 
+                    intensity profiles using CCD sensor data.
+                </p>
+                <div class="project-links">
+                    <a href="assets/docs/ÒpticaFraunhofer.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <line x1="20" y1="20" x2="20" y2="180" stroke="#333" stroke-width="1"/>
+                    <line x1="20" y1="180" x2="300" y2="180" stroke="#333" stroke-width="1"/>
+                    <path d="M20,100 Q55,20 90,100 T160,100 T230,100 T300,100" 
+                          fill="none" stroke="#dcd0b3" stroke-width="3" transform="scale(1, 0.8) translate(0, 40)"/>
+                    <circle cx="55" cy="65" r="3" fill="#dcd0b3"/>
+                    <circle cx="125" cy="175" r="3" fill="#dcd0b3"/>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Polarization & Malus' Law</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Birefringence</span>
+                        <span class="badge">Stokes Parameters</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Generation and analysis of Linear, Elliptical, and Circular polarization states. 
+                    Verified Malus' Law ($I \propto \cos^2 \theta$) and calculated eccentricity 
+                    parameters for quarter-wave plate retardation.
+                </p>
+                <div class="project-links">
+                    <a href="assets/docs/ÒpticaPolarització.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <path d="M30,160 Q150,150 300,10" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="4,4"/>
+                    <path d="M30,160 Q100,150 180,190 Q240,110 300,10" fill="none" stroke="#dcd0b3" stroke-width="2"/>
+                    <circle cx="180" cy="190" r="5" fill="#dcd0b3"/>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Dielectric Reflection & Brewster</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Regression</span>
+                        <span class="badge">Fresnel Eqs</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Determination of refractive index ($n=1.48 \pm 0.01$) via Brewster's angle analysis. 
+                    Modeled reflectance data using Fresnel equations and non-linear least squares 
+                    regression.
+                </p>
+                <div class="project-links">
+                    <a href="assets/docs/ÒpticaReflMedis.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                    <rect x="20" y="60" width="280" height="80" fill="#111" stroke="#333"/>
+                    <line x1="60" y1="60" x2="60" y2="140" stroke="#4b0082" stroke-width="2"/> 
+                    <line x1="90" y1="60" x2="90" y2="140" stroke="#0000ff" stroke-width="3"/> 
+                    <line x1="140" y1="60" x2="140" y2="140" stroke="#00ff00" stroke-width="3"/> 
+                    <line x1="200" y1="60" x2="200" y2="140" stroke="#ffff00" stroke-width="4"/> 
+                    <line x1="260" y1="60" x2="260" y2="140" stroke="#ff0000" stroke-width="2"/> 
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Spectrographic Calibration</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Atomic Physics</span>
+                        <span class="badge">Calibration</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Calibration of a prism spectrograph using Mercury reference lines. 
+                    Identified unknown atomic elements (Cadmium, Zinc) by analyzing 
+                    emission spectra peaks and generating calibration curves.
+                </p>
+                <div class="project-links">
+                    <a href="assets/docs/ÒpticaEspectrometria.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-visual">
+                <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="fringes" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#000"/>
+                            <stop offset="50%" stop-color="#dcd0b3"/>
+                            <stop offset="100%" stop-color="#000"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="repeating-linear-gradient(90deg, transparent, transparent 10px, #dcd0b3 10px, #dcd0b3 20px)"/>
+                    <rect width="100%" height="100%" fill="black" opacity="0.5"/>
+                </svg>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Fresnel Biprism Interference</h3>
+                    <div class="tech-stack">
+                        <span class="badge">Coherence</span>
+                        <span class="badge">Wavefront Splitting</span>
+                    </div>
+                </div>
+                <p class="project-desc">
+                    Investigation of Young's interference using a Fresnel Biprism. 
+                    Determined monochromatic wavelength ($\lambda = 576 \pm 8$ nm) and analyzed 
+                    spatial coherence and chromatic dispersion effects.
+                </p>
+                <div class="project-links">
+                    <a href="assets/docs/ÒpticaYoung.pdf" target="_blank" class="btn-text">
+                        <i class="fas fa-file-pdf"></i> Read Report
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

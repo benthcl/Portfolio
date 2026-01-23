@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ben Thomas</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo" aria-label="Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        
+        <div class="nav-links">
+            <!--<a href="education/hub.html">The Archive</a>-->
+            <a href="analysis.html">Experimental & Theoretical Analysis</a>
+            <a href="computational.html" class="active">Computational Physics & Software</a>
+            <a href="cv.html">CV</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section">
+    <h1>Selected Works</h1>
+    <p class="subtitle">Computational Physics & Software</p>
+</header>
+
+<div class="main-container">
+
+    <article class="project-card">
+    
+    <div class="project-visual">
+    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" class="concept-drawing" style="background: #0f0f15;">
+        
+        <defs>
+            <radialGradient id="thermalFusion" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />   <stop offset="20%" stop-color="#fde047" stop-opacity="0.9" /> <stop offset="45%" stop-color="#ea580c" stop-opacity="0.8" /> <stop offset="70%" stop-color="#7e22ce" stop-opacity="0.5" /> <stop offset="100%" stop-color="#0f0f15" stop-opacity="0" />  </radialGradient>
+
+            <radialGradient id="thermalWarm" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" stop-color="#fde047" stop-opacity="0.9" />
+                <stop offset="40%" stop-color="#dc2626" stop-opacity="0.7" />
+                <stop offset="80%" stop-color="#4c1d95" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#0f0f15" stop-opacity="0" />
+            </radialGradient>
+        </defs>
+
+        <pattern id="fineGrid" width="5" height="5" patternUnits="userSpaceOnUse">
+            <path d="M 5 0 L 0 0 0 5" fill="none" stroke="#ffffff" stroke-width="0.1" opacity="0.1"/>
+        </pattern>
+        <rect width="100" height="100" fill="url(#fineGrid)" />
+
+        <circle cx="35" cy="40" r="35" fill="url(#thermalFusion)" />
+        <circle cx="70" cy="75" r="30" fill="url(#thermalFusion)" opacity="0.8" />
+        <circle cx="75" cy="30" r="25" fill="url(#thermalWarm)" opacity="0.6" />
+
+        <g fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.3">
+            <ellipse cx="35" cy="40" rx="15" ry="15" />
+            <ellipse cx="35" cy="40" rx="25" ry="25" />
+            
+            <ellipse cx="70" cy="75" rx="12" ry="12" />
+            
+            <path d="M 20 60 Q 50 90 85 75 Q 95 50 80 30 Q 50 10 20 60 Z" stroke-opacity="0.15" />
+        </g>
+
+        <g font-family="monospace" font-size="3" fill="#dcd0b3" opacity="0.8">
+            <text x="10" y="94">∇²φ = f(x,y)</text> <text x="68" y="94">N=256x256</text>
+        </g>
+
+    </svg>
+</div>
+
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Computational Physics Core</h3>
+            
+        <div class="tech-stack">
+            <span class="badge">Fortran 90</span>
+            <span class="badge">Numerical Analysis</span>
+            <span class="badge">PDE Solvers</span>
+        </div>
+        </div>
+
+        <p class="project-desc">
+            A high-performance library of numerical solvers for complex physical systems. 
+            Includes a <strong>Finite Difference PDE solver</strong> for Poisson's equation (Heat Transfer), 
+            <strong>Monte Carlo integration</strong> for Quantum Mechanics (particle-in-a-box), and 
+            <strong>Runge-Kutta ODE solvers</strong> for Orbital Mechanics (Kepler/N-Body problems).
+            Optimized for computational efficiency and precision.
+        </p>
+
+        <div class="project-links">
+            <a href="#" class="btn-text">View Source Code &rarr;</a>
+        </div>
+    </div>
+</article>
+
+<div class="project-card">
+    <div class="project-visual">
+        <svg width="100%" height="100%" viewBox="0 0 320 200" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="#0a0a0a"/>
+            <path d="M0,180 L320,180 M20,0 L20,200" stroke="#222" stroke-width="1"/>
+            <path d="M0,178 Q40,178 50,170 Q60,30 65,178 Q100,178 115,170 Q125,30 130,178 Q165,178 180,170 Q190,30 195,178 Q230,178 245,170 Q255,30 260,178 Q295,178 320,178" 
+                  fill="none" stroke="#dcd0b3" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        </svg>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Multi-Wave Interference Simulation</h3>
+            <div class="tech-stack">
+                <span class="badge">MATLAB</span>
+                <span class="badge">Numerical Analysis</span>
+                <span class="badge">Algorithm Design</span>
+            </div>
+        </div>
+        <p class="project-desc">
+            Designed a numerical simulation to model multiple-beam interference in dielectric slabs. 
+            Implemented an iterative algorithm to sum infinite geometric series, analyzing convergence rates 
+            to predict high-finesse Fabry-Pérot resonance peaks.
+        </p>
+        <div class="project-links">
+            <a href="pdfs/ÒpticaFabryPerot.pdf" target="_blank" class="btn-text">
+                <i class="fas fa-file-pdf"></i> View Technical Report
+            </a>
+        </div>
+    </div>
+</div>
+
+    
+<article class="project-card">
+    
+    <div class="project-visual">
+        <div class="project-visual">
+    <svg width="100%" height="100%" viewBox="0 0 100 100" class="concept-drawing">
+        
+        <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#2a2a30" stroke-width="0.5"/>
+        </pattern>
+        <rect width="100" height="100" fill="url(#smallGrid)" />
+
+        <path d="M 15 25 Q 50 110 85 25" 
+              fill="none" 
+              stroke="#52525b" 
+              stroke-width="1.5"
+              stroke-dasharray="4 2"
+        />
+
+        <circle cx="50" cy="68" r="3" fill="#dcd0b3" class="glow-point" />
+        
+        <line x1="50" y1="68" x2="50" y2="90" stroke="#dcd0b3" stroke-width="1" stroke-dasharray="2 2" />
+        <line x1="50" y1="68" x2="10" y2="68" stroke="#dcd0b3" stroke-width="1" stroke-dasharray="2 2" />
+
+        <line x1="10" y1="10" x2="10" y2="90" stroke="#fff" stroke-width="1" /> <line x1="10" y1="90" x2="90" y2="90" stroke="#fff" stroke-width="1" /> </svg>
+</div>
+    </div>
+
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Airport Flow Management Simulation</h3>
+            
+            <div class="tech-stack">
+                <span class="badge">MATLAB</span>
+                <span class="badge">Linear Programming</span>
+                <span class="badge">Data Analysis</span>
+            </div>
+        </div>
+
+        <p class="project-desc">
+            A quantitative simulation of Air Traffic Flow Management (ATFM) strategies at Adolfo Suárez Madrid-Barajas Airport (MAD). 
+            Developed custom <strong>GDP</strong> and <strong>GHP</strong> algorithms using <em>linear integer programming</em> to optimize flight slot allocation under reduced capacity constraints. 
+            The study compares operational costs against delay metrics and proposes an intermodal rail substitution model to reduce CO₂ emissions.
+        </p>
+
+        <div class="project-links">
+            <a href="pdfs/MGTAReport.pdf" target="_blank" class="btn-text">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right:5px;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Read Research Paper
+            </a>
+        </div>
+    </div>
+</article>
+
+<article class="project-card">
+    
+    <div class="project-visual">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" class="concept-drawing">
+            <pattern id="grid2" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#2a2a30" stroke-width="0.5"/>
+            </pattern>
+            <rect width="100" height="100" fill="url(#grid2)" />
+
+            <line x1="10" y1="10" x2="10" y2="90" stroke="#fff" stroke-width="1" /> <line x1="10" y1="90" x2="90" y2="90" stroke="#fff" stroke-width="1" /> <g fill="#52525b" opacity="0.5">
+                <circle cx="30" cy="30" r="1.5" />
+                <circle cx="40" cy="25" r="1.5" />
+                <circle cx="50" cy="50" r="1.5" />
+                <circle cx="60" cy="40" r="1.5" />
+                <circle cx="70" cy="30" r="1.5" />
+                <circle cx="80" cy="60" r="1.5" />
+                <circle cx="25" cy="70" r="1.5" />
+                <circle cx="55" cy="80" r="1.5" />
+            </g>
+
+            <polyline 
+                points="15,85 25,55 40,35 65,20 90,15" 
+                fill="none" 
+                stroke="#dcd0b3" 
+                stroke-width="1.5"
+            />
+
+            <g fill="#dcd0b3" class="pareto-points">
+                <circle cx="15" cy="85" r="2.5" />
+                <circle cx="25" cy="55" r="2.5" />
+                <circle cx="40" cy="35" r="2.5" />
+                <circle cx="65" cy="20" r="2.5" />
+                <circle cx="90" cy="15" r="2.5" />
+            </g>
+
+            <text x="60" y="30" font-family="Arial, sans-serif" font-size="4" fill="#dcd0b3" opacity="0.7">Pareto Front</text>
+        </svg>
+    </div>
+
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Airspace Sectorization Optimization</h3>
+            
+            <div class="tech-stack">
+                <span class="badge">MATLAB</span>
+                <span class="badge">Genetic Algorithms</span>
+                <span class="badge">Pareto Optimization</span>
+            </div>
+        </div>
+
+        <p class="project-desc">
+            An optimization study of the Barcelona Flight Information Region (FIR) using <strong>Genetic Algorithms (GA)</strong> to balance Air Traffic Control workload. 
+            Implemented a multi-objective function to minimize conflict points and sector crossings, generating <strong>Pareto Fronts</strong> to identify the optimal trade-off solutions. 
+            The study analyzed 6 complexity parameters to determine the ideal sector configuration.
+        </p>
+
+        <div class="project-links">
+            <a href="pdfs/Genetic_Algorithm.pdf" target="_blank" class="btn-text">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right:5px;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Read Research Paper
+            </a>
+        </div>
+    </div>
+</article>
+
+
+<article class="project-card">
+        <div class="project-visual">
+            <div class="visual-placeholder" style="background: #2a2a30;"></div> 
+        </div>
+
+        <div class="project-content">
+            <div class="project-header">
+                <h3>Portfolio Website</h3>
+                <div class="tech-stack">
+                    <span class="badge">HTML5</span>
+                    <span class="badge">CSS3</span>
+                    <span class="badge">Git</span>
+                </div>
+            </div>
+
+            <p class="project-desc">
+                A responsive, brutally minimalist personal archive built from scratch. Features custom responsive CSS architecture and semantic HTML5 without external frameworks.
+            </p>
+
+            <div class="project-links">
+                <a href="#" class="btn-text">View Repository &rarr;</a>
+            </div>
+        </div>
+</article>
+
+</div>
+</body>
+</html>
