@@ -109,6 +109,14 @@ h1 {
     margin-top: 20px;
 }
 
+.hero-cta {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .main-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -602,6 +610,10 @@ h1 {
    MOBILE RESPONSIVENESS (Projects)
    ========================================= */
 @media (max-width: 768px) {
+    .hero-cta {
+        justify-content: flex-start;
+    }
+
     .project-card {
         flex-direction: column; /* Stack vertically */
         min-height: auto; /* Remove fixed height constraint */
