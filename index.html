@@ -3,72 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Portfolio | Ben Thomas</title>
-    
+    <title>Ben Thomas | Physics, Mathematics & Computation</title>
     <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html" class="nav-logo">Ben Thomas</a>
-        
-        <div class="nav-links">
-            <!-- <a href="education/hub.html">The Archive</a> -->
-            <a href="analysis.html">Analysis</a>
-            <a href="computational.html">Code</a>
-            <a href="cv.html">CV</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">BT.</a>
+            <div class="nav-links">
+                <a href="theoretical.html">Theory</a>
+                <a href="computational.html">Code</a>
+                <a href="experimental.html">Experiments</a>
+                <a href="cv.html">CV</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <header class="hero-section">
         <h1>Ben Thomas</h1>
-        <p class="subtitle">Physics | Mathematics | Code</p>
+        <p class="subtitle">Physics | Mathematics | Computation</p>
         <p class="hero-text">
             Welcome to my personal archive. I am passionate about exploring complex 
-            systems through mathematical derivation and computational modeling.
+            systems through rigorous mathematical derivation, computational modeling, and empirical analysis.
         </p>
+        
+        <div class="hero-cta">
+            <a href="mailto:your.email@example.com" class="btn-primary">Contact Me</a>
+            <a href="https://github.com/yourusername" target="_blank" class="btn-secondary">GitHub &rarr;</a>
+        </div>
     </header>
 
-    <div class="main-container">
+    <main class="main-container">
         <span class="section-label">Browse Content</span>
 
-<div class="topic-grid">
-    
-    <!--
-    <a href="education/hub.html" class="topic-card">
-        <div>
-            <div class="card-icon">📚</div>
-            <h3>The Archive</h3>
-            <p>Notes & Visualizations (Batxillerato to University)</p>
+        <div class="topic-grid">
+            
+            <a href="theoretical.html" class="topic-card">
+                <div>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                            <path d="M8 7h8"></path>
+                            <path d="M8 11h8"></path>
+                        </svg>
+                    </div>
+                    <h3>Theoretical Physics & Mathematics</h3>
+                    <p>Formal tensor calculus, differential geometry, and analytical derivations.</p>
+                </div>
+                <span class="card-link-text">View Expository Notes &rarr;</span>
+            </a>
+
+            <a href="computational.html" class="topic-card">
+                <div>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Computational Physics & Software</h3>
+                    <p>Numerical simulations, optimization engines, and PDE solvers.</p>
+                </div>
+                <span class="card-link-text">View Source Code &rarr;</span>
+            </a>
+
+            <a href="experimental.html" class="topic-card">
+                <div>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div> 
+                    <h3>Experimental Physics & Engineering</h3>
+                    <p>Hardware metrology, signal processing, and laboratory analysis.</p>
+                </div>
+                <span class="card-link-text">View Research Reports &rarr;</span>
+            </a>
+
         </div>
-        <span class="card-link-text">Enter Archive →</span>
-    </a>
-    -->
-
-
-    <a href="computational.html" class="topic-card">
-        <div>
-            <div class="card-icon">💻</div>
-            <h3>Computational Physics & Software</h3>
-            <p>Numerical simulations, engines, and algorithms.</p>
-        </div>
-        <span class="card-link-text">View Projects →</span>
-    </a>
-
-    <a href="analysis.html" class="topic-card">
-        <div>
-            <div class="card-icon">📝</div> <h3>Experimental & Theoretical Analysis</h3>
-            <p>Lab reports, mathematical derivations, and study notes.</p>
-        </div>
-        <span class="card-link-text">View Documents →</span>
-    </a>
-
-</div>
+    </main>
 
 </body>
 </html>

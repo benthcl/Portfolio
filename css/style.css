@@ -1,14 +1,9 @@
 /* =========================================
    1. GLOBAL VARIABLES & RESET
    ========================================= */
-
-/* --- ADD THIS (CRITICAL FIX) --- */
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
-    /* (Keep your existing colors exactly the same) */
     --accent-color: #dcd0b3; 
     --bg-dark: #18181b;      
     --bg-paper: #131316;     
@@ -17,656 +12,211 @@
     --border-color: #2a2a30; 
 }
 
+/* FIX: Kill the default purple/blue link colors once and for all */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 body {
     background: radial-gradient(circle at top, #1e1e24 0%, #0f0f12 100%);
     color: var(--text-main);
     font-family: 'Computer Modern Serif', serif; 
-    margin: 0;
-    padding: 0;
-    line-height: 1.7;
-    min-height: 100vh;
-    
-    /* --- ADD THIS (PREVENTS SIDE SCROLL) --- */
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
+    margin: 0; padding: 0; line-height: 1.7; min-height: 100vh;
+    overflow-x: hidden; width: 100%; max-width: 100%;
+    text-rendering: auto; -webkit-font-smoothing: auto;
 }
 
 /* =========================================
-   2. NAVIGATION BAR (Solid Black)
+   2. NAVIGATION BAR
    ========================================= */
 .navbar {
-    background-color: #000000; /* Solid Black */
-    border-bottom: 1px solid #333;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background-color: #000000; border-bottom: 1px solid #333;
+    padding: 15px 0; position: sticky; top: 0; z-index: 100;
 }
 
 .nav-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
+    max-width: 1000px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 25px;
 }
 
 .nav-logo {
-    color: var(--text-main);
-    font-weight: bold;
-    font-size: 1.3rem;
-    text-decoration: none;
-    letter-spacing: 0.5px;
+    color: var(--text-main) !important; font-weight: bold; font-size: 1.3rem;
+    text-decoration: none; letter-spacing: 0.5px; font-family: sans-serif;
 }
 
 .nav-links a {
-    color: var(--text-muted);
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
+    color: var(--text-muted) !important; margin-left: 25px; text-decoration: none;
+    font-size: 0.95rem; font-family: sans-serif; transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
-    color: var(--accent-color);
-}
-
-.nav-links .active {
-    color: var(--accent-color);
-}
+.nav-links a:hover, .nav-links .active { color: var(--accent-color) !important; }
 
 /* =========================================
-   3. HOME PAGE (Hero & Grid)
+   3. HERO SECTION & ACTION BUTTONS
    ========================================= */
 .hero-section {
-    max-width: 1000px;
-    margin: 80px auto 60px auto;
-    padding: 0 25px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 40px;
+    max-width: 1000px; margin: 80px auto 40px auto;
+    padding: 0 25px 40px 25px; border-bottom: 1px solid var(--border-color);
 }
 
-h1 {
-    font-size: 3.5rem;
-    margin: 0 0 10px 0;
-    color: var(--text-main);
-    letter-spacing: -1px;
+h1 { font-size: 3.5rem; margin: 0 0 10px 0; color: var(--text-main); letter-spacing: -1px; }
+
+.subtitle { color: var(--accent-color); font-size: 1.4rem; font-style: italic; margin-top: 0; }
+
+.hero-text { max-width: 600px; color: var(--text-muted); font-size: 1.1rem; margin-top: 20px; }
+
+/* Spacing fix for buttons */
+.hero-cta {
+    margin-top: 32px; display: flex; gap: 32px; align-items: center;
 }
 
-.subtitle {
-    color: var(--accent-color);
-    font-size: 1.4rem;
-    font-style: italic;
-    margin-top: 0;
+.btn-primary {
+    background: transparent; color: var(--text-main) !important; border: 1.5px solid #444;
+    padding: 0.8rem 1.6rem; text-decoration: none; font-family: sans-serif;
+    font-size: 0.9rem; border-radius: 4px; transition: all 0.3s ease;
 }
 
-.hero-text {
-    max-width: 600px;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-top: 20px;
-}
-
-.main-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 25px 80px 25px;
-}
-
-.section-label {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin-bottom: 25px;
-    display: block;
-}
-
-.topic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-/* CARDS */
-.topic-card {
-    background-color: var(--bg-paper);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 30px;
-    text-decoration: none;
-    transition: transform 0.2s, border-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
-}
-
-.topic-card:hover {
-    border-color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
-.card-icon {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    opacity: 0.8;
-}
-
-.topic-card h3 {
-    margin: 0 0 10px 0;
-    color: var(--text-main);
-    font-size: 1.3rem;
-    font-weight: normal;
-}
-
-.topic-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin: 0;
-    line-height: 1.5;
-}
-
-.card-link-text {
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    font-weight: bold;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-/* =========================================
-   4. THE ARCHIVE (The Premium Journal Look)
-   ========================================= */
-
-.archive-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 25px 80px 25px;
-}
-
-/* Section Headers (e.g. "Theoretical Physics") */
-.archive-section {
-    margin-bottom: 70px; /* Big spacing between categories */
-}
-
-.archive-header {
-    font-size: 0.95rem;
-    color: var(--accent-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: sans-serif;
-    opacity: 0.9;
-}
-
-/* The List Container */
-.journal-table {
-    display: flex;
-    flex-direction: column;
-    gap: 0; /* No gap, we use borders */
-}
-
-/* INDIVIDUAL ENTRY (The Row) */
-.journal-row {
-    display: flex;
-    align-items: center; /* Vertically center everything */
-    padding: 25px 20px;
-    border-bottom: 1px solid #1f1f23; /* Very subtle divider */
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border-left: 3px solid transparent; /* Invisible border for hover effect */
-    background: linear-gradient(90deg, transparent 0%, transparent 100%);
-}
-
-/* HOVER EFFECT: This removes the "Plain" feeling */
-.journal-row:hover {
-    background: linear-gradient(90deg, rgba(220, 208, 179, 0.03) 0%, transparent 100%);
-    border-left-color: var(--accent-color); /* Gold accent appears on left */
-    padding-left: 30px; /* Slight shift to the right */
-}
-
-/* Column 1: The Year */
-.journal-date {
-    flex: 0 0 70px;
-    color: var(--text-muted);
-    font-family: monospace;
-    font-size: 0.9rem;
-    opacity: 0.5;
-}
-
-/* Column 2: Title & Tags */
-.journal-info {
-    flex: 1;
-}
-
-.journal-title {
-    display: block;
-    color: var(--text-main);
-    font-size: 1.2rem; /* Larger, academic size */
-    font-weight: 500;
-    margin-bottom: 8px;
-    transition: color 0.2s;
-    font-family: 'Computer Modern Serif', serif; /* Your signature font */
-}
-
-.journal-row:hover .journal-title {
-    color: var(--accent-color);
-}
-
-/* The Tags (Badges) */
-.journal-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.journal-tags span {
-    font-size: 0.7rem;
-    color: #888;
-    background: rgba(255,255,255,0.05);
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-family: sans-serif;
-    letter-spacing: 0.5px;
-    border: 1px solid transparent;
-}
-
-/* Make tags pop slightly on hover */
-.journal-row:hover .journal-tags span {
-    border-color: #333;
-    background: #000;
-}
-
-/* Column 3: The Icon Arrow */
-.journal-icon {
-    color: var(--accent-color);
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.journal-row:hover .journal-icon {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Mobile Tweaks */
-@media (max-width: 600px) {
-    .journal-row { flex-wrap: wrap; padding: 20px 10px; }
-    .journal-date { width: 100%; margin-bottom: 5px; font-size: 0.8rem;}
-    .journal-title { font-size: 1.1rem; }
-}
-
-/* =========================================
-   5. CV & PAPER LAYOUT (The Notebook Look)
-   ========================================= */
-.paper-container {
-    width: 100%;             
-    max-width: 900px;        /* A4 Readability Width */
-    margin: 60px auto;       /* Centered */
-    padding: 60px 80px;      /* Generous margins */
-    
-    background-color: var(--bg-paper); 
-    border: 1px solid var(--border-color);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Drop Shadow */
-}
-
-.cv-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.contact-info {
-    color: var(--text-muted);
-    margin: 10px 0 20px 0;
-    font-size: 0.95rem;
-}
-
-.contact-info a {
-    color: var(--text-muted);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--border-color);
-    transition: color 0.2s;
-}
-
-.contact-info a:hover {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-.divider {
-    border: 0;
-    border-top: 1px solid var(--border-color);
-    margin: 30px 0;
-}
-
-/* CV Sections */
-.cv-section {
-    margin-bottom: 50px;
-}
-
-.section-title {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-main);
-    
-    /* The Gold Line Structure */
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-    display: inline-block;
-    min-width: 100%;
-}
-
-.cv-item {
-    margin-bottom: 30px;
-}
-
-.cv-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.cv-item h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--text-main);
-    font-weight: normal;
-}
-
-/* University Name / Subtitles */
-.subtitle {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4px;
-    font-style: italic;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.subtitle span:first-child {
-    color: var(--text-main); /* White University Name */
-}
-
-/* Dates - Keep them subtle */
-.date {
-    font-weight: 500;
-    color: #666; /* Dark Grey */
-    font-size: 0.9rem;
-    white-space: nowrap;
-    font-family: sans-serif; /* Contrast font */
-}
-
-/* Bullet Points - The Gold Accent */
-.cv-item li, .skill-list li, section ul li {
-    list-style-type: none;
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.cv-item li::before, .skill-list li::before, section ul li::before {
-    content: "•";
-    color: var(--accent-color); /* Gold Bullet */
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-/* Download Button */
-.btn-download {
-    display: inline-block;
-    padding: 10px 24px;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    margin-top: 10px;
-    transition: all 0.3s;
-}
-
-.btn-download:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+.btn-primary:hover {
+    border-color: var(--accent-color); color: var(--accent-color) !important;
     background: rgba(220, 208, 179, 0.05);
 }
 
+.btn-secondary {
+    color: var(--text-muted) !important; text-decoration: none; font-size: 0.9rem;
+    font-family: sans-serif; transition: color 0.3s ease;
+}
+
+.btn-secondary:hover { color: var(--accent-color) !important; }
+
 /* =========================================
-   6. RESPONSIVE DESIGN (Mobile)
+   4. TOPIC GRID (The "Cards" Fix)
+   ========================================= */
+.main-container { max-width: 1000px; margin: 0 auto; padding: 0 25px 80px 25px; }
+
+.back-link {
+    display: inline-block; color: var(--text-muted) !important; text-decoration: none;
+    font-family: sans-serif; font-size: 0.9rem; margin-top: 25px; margin-bottom: 35px; 
+    transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent-color) !important; }
+
+.section-label {
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--text-muted); margin-bottom: 25px; display: block; font-family: sans-serif;
+}
+
+/* GRID SETUP */
+.topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+
+.topic-card {
+    background-color: var(--bg-paper) !important; 
+    border: 1px solid var(--border-color);
+    border-radius: 6px; padding: 30px; text-decoration: none;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 220px; transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.topic-card:hover {
+    border-color: var(--accent-color); transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+}
+
+.card-icon { margin-bottom: 15px; color: var(--text-main); }
+.card-icon svg { stroke: var(--text-muted); stroke-width: 1.5px; transition: stroke 0.3s ease; }
+.topic-card:hover .card-icon svg { stroke: var(--accent-color); }
+
+.topic-card h3 { margin: 0 0 10px 0; color: var(--text-main) !important; font-size: 1.3rem; font-weight: normal; }
+.topic-card p { font-size: 0.95rem; color: var(--text-muted) !important; margin: 0; line-height: 1.5; }
+.card-link-text { font-size: 0.85rem; color: var(--accent-color) !important; font-weight: bold; font-family: sans-serif; margin-top: 20px; display: inline-block; }
+
+/* =========================================
+   5. PROJECT CARDS (List View)
+   ========================================= */
+.project-card {
+    display: flex; background: var(--bg-paper); border: 1px solid var(--border-color);
+    border-radius: 8px; margin-bottom: 3rem; overflow: hidden; min-height: 280px; 
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.project-card:hover { border-color: var(--accent-color); transform: translateY(-2px); }
+
+.project-visual { flex: 0 0 320px; background: #000000; border-right: 1px solid var(--border-color); position: relative; overflow: hidden; }
+
+.project-visual img, .project-visual svg:not(.theoretical-svg) {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+}
+
+.project-content { flex: 1; padding: 30px 40px; display: flex; flex-direction: column; justify-content: center; }
+.project-header h3 { margin-top: 0; margin-bottom: 12px; color: var(--text-main) !important; font-size: 1.5rem; font-weight: 600; }
+.badge { font-family: sans-serif; font-size: 0.75rem; background: rgba(220, 208, 179, 0.08); color: var(--text-muted); padding: 4px 10px; border-radius: 4px; border: 1px solid #333; margin-right: 8px; }
+.project-desc { color: var(--text-muted) !important; font-size: 1rem; line-height: 1.6; margin-top: 20px; margin-bottom: 25px; }
+.btn-text { color: var(--accent-color) !important; text-decoration: none; font-weight: bold; font-size: 0.9rem; font-family: sans-serif; transition: opacity 0.2s; }
+
+/* =========================================
+   6. THEORETICAL RENDERING ENGINE
+   ========================================= */
+.theoretical-svg { width: 80%; height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.theoretical-svg path, .theoretical-svg ellipse, .theoretical-svg line, .theoretical-svg circle[stroke] {
+    stroke: var(--accent-color) !important; stroke-width: 2px !important; fill: none !important; opacity: 0.8; transition: all 0.3s ease;
+}
+
+.theoretical-svg circle:not([stroke]) { fill: var(--accent-color) !important; stroke: none !important; opacity: 1; transition: all 0.3s ease; }
+
+.project-card:hover .theoretical-svg path, .project-card:hover .theoretical-svg ellipse, .project-card:hover .theoretical-svg line, .project-card:hover .theoretical-svg circle[stroke] {
+    opacity: 1; stroke: #ffffff !important; fill: none !important;
+}
+.project-card:hover .theoretical-svg circle:not([stroke]) { opacity: 1; fill: #ffffff !important; }
+
+/* =========================================
+   7. RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 768px) {
-    /* Stack Nav */
-    .nav-container {
-        flex-direction: column;
-        padding-bottom: 10px;
-    }
-    
-    .nav-links {
-        margin-top: 15px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
+    .nav-container { flex-direction: column; padding-bottom: 10px; }
+    .nav-links { margin-top: 15px; justify-content: center; gap: 20px; flex-wrap: wrap; }
     .nav-links a { margin: 0; }
+    .project-card { flex-direction: column; min-height: auto; }
+    .project-visual { flex: none; width: 100%; height: 220px; border-right: none; border-bottom: 1px solid var(--border-color); }
+}
+/* =========================================
+   CV SPECIFIC REFINEMENT (Paper & Mobile)
+   ========================================= */
 
-    /* Fix CV Margins for Phone */
+/* Center the CV and keep it from stretching too wide */
+.paper-container {
+    width: 95%;             
+    max-width: 850px;        /* Prevents full-width stretch */
+    margin: 60px auto;       /* Centers horizontally */
+    padding: 60px 80px;      
+    background-color: var(--bg-paper); 
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+}
+
+/* Flex subtitle spacing (Uni vs Location) */
+.paper-container .subtitle {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+/* Mobile: Strip margins and borders to fit phone screens */
+@media (max-width: 768px) {
     .paper-container {
-        padding: 30px 20px;
+        width: 100%;
         margin: 0;
+        padding: 40px 20px;
         border: none;
         box-shadow: none;
-        max-width: 100%;
     }
-
-    /* Stack CV Dates */
-    .cv-row {
+    
+    .paper-container .cv-row, 
+    .paper-container .subtitle {
         flex-direction: column;
+        align-items: flex-start;
     }
-    .date {
-        margin-top: 5px;
-        color: var(--accent-color); /* On mobile, highlight date slightly */
-    }
-
-    /* Grid & Split */
-    .topic-grid { grid-template-columns: 1fr; }
-}
-
-/* =========================================
-   PROJECTS PAGE STYLING (Updated for Images)
-   ========================================= */
-
-/* The Card Container */
-.project-card {
-    display: flex; /* Side-by-side layout on Desktop */
-    background: var(--bg-paper);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    margin-bottom: 3rem; /* Space between projects */
-    overflow: hidden; /* Clips the image corners */
-    transition: transform 0.2s, border-color 0.2s;
-    
-    /* Ensures the card has a fixed height structure on desktop */
-    min-height: 280px; 
-}
-
-.project-card:hover {
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-/* 1. The Visual Side (Container for the Image) */
-.project-visual {
-    /* Fixed width on desktop ensures text doesn't squish the image */
-    flex: 0 0 320px; 
-    background: #000;
-    border-right: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden; /* Required for the zoom effect */
-}
-
-/* 2. The Actual Image Styling */
-.project-img {
-    width: 100%;
-    height: 100%;
-    
-    /* CRITICAL: This acts like 'background-size: cover' */
-    /* It crops the image slightly to fill the space without stretching */
-    object-fit: cover; 
-    object-position: center top; /* Focuses on the top of your screenshot (usually the header) */
-    
-    display: block;
-    transition: transform 0.5s ease; /* Slow, smooth zoom */
-}
-
-/* Optional: Gentle Zoom effect when hovering the card */
-.project-card:hover .project-img {
-    transform: scale(1.03);
-}
-
-/* 3. The Content Side (Right) */
-.project-content {
-    flex: 1; /* Fills the rest of the space */
-    padding: 30px 40px; /* More breathing room */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically centers the text */
-}
-
-/* Typography & Badges */
-.project-header h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    color: var(--text-main);
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.tech-stack {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.badge {
-    font-family: sans-serif;
-    font-size: 0.75rem;
-    background: rgba(220, 208, 179, 0.08); /* Very subtle gold tint */
-    color: var(--text-muted);
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid #333;
-    letter-spacing: 0.5px;
-}
-
-.project-desc {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Text Links */
-.project-links {
-    margin-top: auto; /* Pushes links to the bottom if content is short */
-}
-
-.btn-text {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-right: 25px;
-    position: relative;
-    transition: opacity 0.2s;
-}
-
-.btn-text:hover {
-    opacity: 0.8;
-}
-
-/* =========================================
-   MOBILE RESPONSIVENESS (Projects)
-   ========================================= */
-@media (max-width: 768px) {
-    .project-card {
-        flex-direction: column; /* Stack vertically */
-        min-height: auto; /* Remove fixed height constraint */
-    }
-
-    .project-visual {
-        flex: none; /* Reset the fixed width */
-        width: 100%;
-        height: 200px; /* Force a visible height for the image */
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-    }
-    
-    .project-img {
-        height: 100%; /* Fills the 200px container */
-        object-position: top center; /* Keeps the top of the image visible */
-    }
-
-    .project-content {
-        padding: 25px 20px;
-    }
-    
-    .project-header h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* Animation for Pareto Points */
-.pareto-points circle {
-    animation: twinkle 3s infinite ease-in-out;
-}
-
-/* Stagger the animation so they don't blink in unison */
-.pareto-points circle:nth-child(1) { animation-delay: 0s; }
-.pareto-points circle:nth-child(2) { animation-delay: 0.5s; }
-.pareto-points circle:nth-child(3) { animation-delay: 1s; }
-.pareto-points circle:nth-child(4) { animation-delay: 1.5s; }
-.pareto-points circle:nth-child(5) { animation-delay: 2s; }
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.6; r: 2.5; }
-    50% { opacity: 1; r: 3; }
-}
-
-/* =========================================
-   7. UTILITY CLASSES (Add these at the bottom)
-   ========================================= */
-
-/* Use this for the Analysis Hub Cards to center icons/text */
-.center-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    justify-content: center;
-}
-
-.center-card-content .card-icon {
-    font-size: 2.5rem; /* Larger icons for the Hub */
-    color: var(--accent-color);
-    margin-bottom: 20px;
-}
-
-/* Fix for PDF Icons in buttons */
-.btn-text i {
-    margin-right: 8px;
 }
