@@ -77,6 +77,12 @@ body {
     color: var(--accent-color);
 }
 
+a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 /* =========================================
    3. HOME PAGE (Hero & Grid)
    ========================================= */
@@ -109,6 +115,14 @@ h1 {
     margin-top: 20px;
 }
 
+.hero-cta {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .main-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -137,7 +151,7 @@ h1 {
     border-radius: 6px;
     padding: 30px;
     text-decoration: none;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -146,7 +160,8 @@ h1 {
 
 .topic-card:hover {
     border-color: var(--accent-color);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
 }
 
 .card-icon {
@@ -496,7 +511,7 @@ h1 {
     border-radius: 8px;
     margin-bottom: 3rem; /* Space between projects */
     overflow: hidden; /* Clips the image corners */
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     
     /* Ensures the card has a fixed height structure on desktop */
     min-height: 280px; 
@@ -591,7 +606,7 @@ h1 {
     font-size: 0.9rem;
     margin-right: 25px;
     position: relative;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-text:hover {
@@ -602,6 +617,10 @@ h1 {
    MOBILE RESPONSIVENESS (Projects)
    ========================================= */
 @media (max-width: 768px) {
+    .hero-cta {
+        justify-content: flex-start;
+    }
+
     .project-card {
         flex-direction: column; /* Stack vertically */
         min-height: auto; /* Remove fixed height constraint */
