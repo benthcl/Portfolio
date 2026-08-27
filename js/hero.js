@@ -12,17 +12,18 @@
 
     function highlightCode(src) {
         var keywords = /^(def|return|for|in|range|if|else|elif|while|import|from|as|class|True|False|None)$/;
-        var fns = /^(rk4|f)$/;
-        var re = /(#[^\n]*|[A-Za-z_\u03c6\u03a6][\w\u03c6\u03a6]*|\d+(?:\.\d+)?|[()[\]+\-*/=,<>:]+|\s+|.+)/g;
+        var fns = /^(rk4|f|groupBy|agg|avg|filter|orderBy|alias|col|read|format|load|desc|count|write|mode|saveAsTable)$/;
+        var re = /(#[^\n]*|"[^"\n]*"|'[^'\n]*'|[A-Za-z_\u03c6\u03a6][\w\u03c6\u03a6]*|\d+(?:\.\d+)?|[()[\]+\-*/=,<>:.]+|\s+|.)/g;
         var out = "";
         var m;
         while ((m = re.exec(src))) {
             var tok = m[0];
             if (tok.charAt(0) === "#") out += '<span class="tok-cmt">' + escapeHtml(tok) + "</span>";
+            else if (tok.charAt(0) === "\"" || tok.charAt(0) === "'") out += '<span class="tok-str">' + escapeHtml(tok) + "</span>";
             else if (keywords.test(tok)) out += '<span class="tok-kw">' + escapeHtml(tok) + "</span>";
             else if (fns.test(tok)) out += '<span class="tok-fn">' + escapeHtml(tok) + "</span>";
             else if (/^\d/.test(tok)) out += '<span class="tok-num">' + escapeHtml(tok) + "</span>";
-            else if (/^[()[\]+\-*/=,<>:]+$/.test(tok)) out += '<span class="tok-op">' + escapeHtml(tok) + "</span>";
+            else if (/^[()[\]+\-*/=,<>:.]+$/.test(tok)) out += '<span class="tok-op">' + escapeHtml(tok) + "</span>";
             else out += escapeHtml(tok);
         }
         return out;
@@ -32,11 +33,15 @@
         var pre = codeEl.closest("pre") || codeEl;
         var pane = codeEl.closest(".wb-pane, .band-term") || pre.parentElement;
         if (!pane || pane.clientHeight < 32) return;
+        var fill = pane.closest(".band-widget-code-fill");
+        var box = fill ? pre : pane;
+        if (box.clientHeight < 32) return;
         pre.style.fontSize = "";
-        var size = 15;
-        for (; size >= 9; size -= 0.5) {
+        var size = fill ? 22 : 15;
+        var min = fill ? 11 : 9;
+        for (; size >= min; size -= 0.5) {
             pre.style.fontSize = size + "px";
-            if (pre.scrollHeight <= pane.clientHeight + 2 && pre.scrollWidth <= pane.clientWidth + 2) break;
+            if (pre.scrollHeight <= box.clientHeight + 2 && pre.scrollWidth <= box.clientWidth + 2) break;
         }
     }
 
@@ -428,6 +433,21 @@
         "  + φ[i,j+1] + φ[i,j-1])/4"
     ].join("\n");
 
+    var sparkSource = [
+        "from pyspark.sql.functions import avg, col, count",
+        "",
+        "ratings = spark.read.format(\"delta\").load(\"/ratings\")",
+        "",
+        "top = (ratings",
+        "  .groupBy(\"movieId\")",
+        "  .agg(avg(\"rating\").alias(\"mean\"),",
+        "       count(\"*\").alias(\"n\"))",
+        "  .filter(col(\"mean\") > 4)",
+        "  .orderBy(col(\"mean\").desc()))",
+        "",
+        "top.write.mode(\"overwrite\").saveAsTable(\"gold.top\")"
+    ].join("\n");
+
     function loopWriteKatex(el, tex, opts) {
         opts = opts || {};
         var running = true;
@@ -481,12 +501,14 @@
         } else if (kind === "code") {
             var codeEl = el.querySelector("code");
             if (codeEl) {
+                var named = el.getAttribute("data-code");
+                var source = named === "spark" ? sparkSource : (named || poissonSource);
                 return typeCode(codeEl, {
-                    text: poissonSource,
+                    text: source,
                     loop: true,
                     hold: 6500,
                     instant: reduce,
-                    delay: 46
+                    delay: 28
                 });
             }
         } else if (kind === "write") {
@@ -523,6 +545,85 @@
                 }
             }, 2800);
             return function () { window.clearInterval(atimer); };
+        } else if (kind === "medallion" || kind === "pipeline") {
+            if (reduce) return function () {};
+            var layers = el.querySelectorAll(".med-layer, .pipe-step");
+            if (!layers.length) return function () {};
+            var mi = 0;
+            var mtimer = window.setInterval(function () {
+                if (el.classList.contains("is-paused")) return;
+                mi = (mi + 1) % layers.length;
+                for (var n = 0; n < layers.length; n += 1) {
+                    layers[n].classList.toggle("is-live", n === mi);
+                }
+            }, 2200);
+            return function () { window.clearInterval(mtimer); };
+        } else if (kind === "langgraph") {
+            var path = el.querySelector(".lg-flow");
+            var token = el.querySelector(".lg-token");
+            var nodes = el.querySelectorAll(".lg-node");
+            if (!path || !token) return function () {};
+            var len = 0;
+            try { len = path.getTotalLength(); } catch (err) { len = 0; }
+            function nearest(pt) {
+                var best = 0;
+                var bd = 1e9;
+                for (var n = 0; n < nodes.length; n += 1) {
+                    var dx = pt.x - (+nodes[n].getAttribute("data-x") || 0);
+                    var dy = pt.y - (+nodes[n].getAttribute("data-y") || 0);
+                    var d = dx * dx + dy * dy;
+                    if (d < bd) { bd = d; best = n; }
+                }
+                return best;
+            }
+            function place(t) {
+                if (!len) return;
+                var pt = path.getPointAtLength(t * len);
+                token.setAttribute("cx", pt.x);
+                token.setAttribute("cy", pt.y);
+                var live = nearest(pt);
+                for (var n = 0; n < nodes.length; n += 1) {
+                    nodes[n].classList.toggle("is-live", n === live);
+                }
+            }
+            if (reduce || !len) {
+                place(0.42);
+                return function () {};
+            }
+            var stopped = false;
+            var elapsed = 0;
+            var last = performance.now();
+            var duration = 7800;
+            var raf = 0;
+            function frame(now) {
+                if (stopped) return;
+                var dt = now - last;
+                last = now;
+                if (!el.classList.contains("is-paused")) {
+                    elapsed = (elapsed + dt) % duration;
+                    place(elapsed / duration);
+                }
+                raf = window.requestAnimationFrame(frame);
+            }
+            place(0);
+            raf = window.requestAnimationFrame(frame);
+            return function () {
+                stopped = true;
+                window.cancelAnimationFrame(raf);
+            };
+        } else if (kind === "agents") {
+            if (reduce) return function () {};
+            var agentNodes = el.querySelectorAll(".agent-node");
+            if (!agentNodes.length) return function () {};
+            var ai2 = 0;
+            var atimer2 = window.setInterval(function () {
+                if (el.classList.contains("is-paused")) return;
+                ai2 = (ai2 + 1) % agentNodes.length;
+                for (var n = 0; n < agentNodes.length; n += 1) {
+                    agentNodes[n].classList.toggle("is-live", n === ai2);
+                }
+            }, 2000);
+            return function () { window.clearInterval(atimer2); };
         }
 
         if (reduce) el.classList.add("is-paused");

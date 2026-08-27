@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Work | Ben Thomas</title>
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="work">
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">BT.</a>
+        <div class="nav-end">
+            <div class="nav-links">
+                <a href="work.html" class="active">Work</a>
+                <a href="theoretical.html">Theory</a>
+                <a href="computational.html">Code</a>
+                <a href="experimental.html">Experiments</a>
+                <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            </div>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-banner">
+    <div class="hero-section">
+        <div class="hero-layout">
+            <div class="hero-copy">
+                <p class="hero-kicker">Work</p>
+                <h1>Data &amp; AI</h1>
+                <p class="subtitle">Pipelines, Spark, and agents</p>
+                <p class="hero-text">
+                    Projects I built as a Data and AI engineer — lakehouses, Spark, and agentic systems you can open on GitHub.
+                </p>
+            </div>
+            <div class="hero-art topic-work" aria-hidden="true">
+                <div class="band-widget band-widget-langgraph" data-card-widget="langgraph">
+                    <svg class="lg-graph" viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet">
+                        <path class="lg-edge" d="M70 22 L140 78 L210 22 M112 22 L140 78 L168 22 M140 78 L140 186"></path>
+                        <path class="lg-flow" fill="none" d="M70 22 L140 78 L140 118 L140 158 L140 186"></path>
+                        <g class="lg-node is-live" data-x="70" data-y="22">
+                            <circle cx="70" cy="22" r="8"></circle>
+                        </g>
+                        <g class="lg-node" data-x="112" data-y="22">
+                            <circle cx="112" cy="22" r="8"></circle>
+                        </g>
+                        <g class="lg-node" data-x="168" data-y="22">
+                            <circle cx="168" cy="22" r="8"></circle>
+                        </g>
+                        <g class="lg-node" data-x="210" data-y="22">
+                            <circle cx="210" cy="22" r="8"></circle>
+                        </g>
+                        <g class="lg-node" data-x="140" data-y="78">
+                            <rect x="94" y="64" width="92" height="28" rx="8"></rect>
+                            <text x="140" y="78">Stage 0</text>
+                        </g>
+                        <g class="lg-node" data-x="140" data-y="118">
+                            <rect x="108" y="106" width="64" height="24" rx="6"></rect>
+                            <text x="140" y="118">shuffle</text>
+                        </g>
+                        <g class="lg-node" data-x="140" data-y="158">
+                            <rect x="94" y="144" width="92" height="28" rx="8"></rect>
+                            <text x="140" y="158">Stage 1</text>
+                        </g>
+                        <g class="lg-node" data-x="140" data-y="186">
+                            <rect x="110" y="176" width="60" height="20" rx="10"></rect>
+                            <text x="140" y="186">collect</text>
+                        </g>
+                        <circle class="lg-token" cx="70" cy="22" r="5"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main-container">
+    <div class="section-head">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Selected work</h2>
+    </div>
+
+    <div class="archive-bands">
+
+        <a href="https://github.com/benthomass/databricks-movies" target="_blank" rel="noopener noreferrer" class="archive-band topic-work">
+            <div class="band-widget band-widget-chart" aria-hidden="true">
+                <div class="rank-chart">
+                    <div class="rank-col" style="--h:46%; --i:0"><i></i><span>Sci-fi</span></div>
+                    <div class="rank-col" style="--h:62%; --i:1"><i></i><span>Drama</span></div>
+                    <div class="rank-col" style="--h:38%; --i:2"><i></i><span>Comedy</span></div>
+                    <div class="rank-col" style="--h:84%; --i:3"><i></i><span>Crime</span></div>
+                    <div class="rank-col" style="--h:57%; --i:4"><i></i><span>Action</span></div>
+                    <div class="rank-col" style="--h:71%; --i:5"><i></i><span>Anim.</span></div>
+                </div>
+            </div>
+            <div class="band-body">
+                <div class="band-kicker">
+                    <span>Lakehouse</span>
+                    <span class="band-count">Databricks</span>
+                </div>
+                <h3>Movies lakehouse</h3>
+                <p>A Spark pipeline on a public catalog of about 45,000 films and 26 million ratings: ingest, clean, then rankings and slices with Plotly.</p>
+                <ul class="band-toc">
+                    <li>Databricks</li>
+                    <li>Spark</li>
+                    <li>Delta</li>
+                    <li>PySpark</li>
+                    <li>Plotly</li>
+                </ul>
+                <span class="band-cta">View repository →</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/benthomass/azure-databricks-spark" target="_blank" rel="noopener noreferrer" class="archive-band topic-work">
+            <div class="band-widget band-widget-langgraph band-widget-adf" data-card-widget="langgraph" aria-hidden="true">
+                <svg class="lg-graph" viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet">
+                    <path class="lg-edge" d="M28 50 H246 M90 50 V106 H246 M168 50 V162"></path>
+                    <path class="lg-flow" fill="none" d="M28 50 L90 50 L168 50 L246 50 L168 50 L168 106 L246 106 L168 162"></path>
+                    <g class="lg-node is-live" data-x="28" data-y="50">
+                        <circle cx="28" cy="50" r="14"></circle>
+                        <text x="28" y="50">T</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="90" data-y="50">
+                        <rect x="58" y="36" width="64" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="58" y="36" width="6" height="28" rx="3"></rect>
+                        <text x="92" y="50">Lookup</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="168" data-y="50">
+                        <rect x="136" y="36" width="64" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="136" y="36" width="6" height="28" rx="3"></rect>
+                        <text x="170" y="50">ForEach</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="246" data-y="50">
+                        <rect x="214" y="36" width="64" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="214" y="36" width="6" height="28" rx="3"></rect>
+                        <text x="248" y="50">Notebook</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="90" data-y="106">
+                        <rect x="58" y="92" width="64" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="58" y="92" width="6" height="28" rx="3"></rect>
+                        <text x="92" y="106">If</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="168" data-y="106">
+                        <rect x="136" y="92" width="64" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="136" y="92" width="6" height="28" rx="3"></rect>
+                        <text x="170" y="106">Copy</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="246" data-y="106">
+                        <rect x="214" y="92" width="64" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="214" y="92" width="6" height="28" rx="3"></rect>
+                        <text x="248" y="106">Delta</text>
+                    </g>
+                    <g class="lg-node adf-act" data-x="168" data-y="162">
+                        <rect x="128" y="148" width="80" height="28" rx="6"></rect>
+                        <rect class="act-bar" x="128" y="148" width="6" height="28" rx="3"></rect>
+                        <text x="170" y="162">Lakehouse</text>
+                    </g>
+                    <circle class="lg-token" cx="28" cy="50" r="5"></circle>
+                </svg>
+            </div>
+            <div class="band-body">
+                <div class="band-kicker">
+                    <span>Azure</span>
+                    <span class="band-count">Databricks · ADF</span>
+                </div>
+                <h3>Azure Databricks &amp; Spark</h3>
+                <p>Hands-on Azure data engineering: notebooks, Data Factory pipelines and triggers, and a Formula 1 lakehouse on Databricks.</p>
+                <ul class="band-toc">
+                    <li>Azure Databricks</li>
+                    <li>Spark</li>
+                    <li>Data Factory</li>
+                    <li>Formula 1</li>
+                </ul>
+                <span class="band-cta">View repository →</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/benthomass/spark-course" target="_blank" rel="noopener noreferrer" class="archive-band topic-work">
+            <div class="band-widget band-widget-code band-widget-code-fill" data-card-widget="code" data-code="spark" aria-hidden="true">
+                <div class="band-term">
+                    <div class="term-dots"><span></span><span></span><span></span></div>
+                    <pre class="term-code band-code"><code></code></pre>
+                </div>
+            </div>
+            <div class="band-body">
+                <div class="band-kicker">
+                    <span>Spark</span>
+                    <span class="band-count">Python</span>
+                </div>
+                <h3>Apache Spark</h3>
+                <p>Spark in Python from RDDs through SQL, ML, streaming, and running on a cluster.</p>
+                <ul class="band-toc">
+                    <li>RDD</li>
+                    <li>Spark SQL</li>
+                    <li>MLlib</li>
+                    <li>Streaming</li>
+                    <li>Cluster</li>
+                </ul>
+                <span class="band-cta">View repository →</span>
+            </div>
+        </a>
+
+        <a href="https://github.com/benthomass/agentic-langchain-langgraph" target="_blank" rel="noopener noreferrer" class="archive-band topic-work">
+            <div class="band-widget band-widget-langgraph" data-card-widget="langgraph" aria-hidden="true">
+                <svg class="lg-graph" viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet">
+                    <path class="lg-edge" d="M50 40 H126 V164 M126 40 H236 V84 H126"></path>
+                    <path class="lg-edge lg-edge-loop" d="M126 112 C 48 112, 48 40, 126 40"></path>
+                    <path class="lg-flow" fill="none" d="M50 40 L126 40 L236 40 L236 84 L126 84 L126 112 L126 164"></path>
+                    <g class="lg-node is-live" data-x="50" data-y="40">
+                        <rect x="22" y="28" width="56" height="24" rx="12"></rect>
+                        <text x="50" y="40">Start</text>
+                    </g>
+                    <g class="lg-node" data-x="126" data-y="40">
+                        <rect x="96" y="26" width="60" height="28" rx="8"></rect>
+                        <text x="126" y="40">Agent</text>
+                    </g>
+                    <g class="lg-node" data-x="236" data-y="40">
+                        <rect x="204" y="26" width="64" height="28" rx="8"></rect>
+                        <text x="236" y="40">Tools</text>
+                    </g>
+                    <g class="lg-node" data-x="236" data-y="84">
+                        <rect x="204" y="70" width="64" height="28" rx="8"></rect>
+                        <text x="236" y="84">MCP</text>
+                    </g>
+                    <g class="lg-node" data-x="126" data-y="112">
+                        <rect x="96" y="98" width="60" height="28" rx="8"></rect>
+                        <text x="126" y="112">Gate</text>
+                    </g>
+                    <g class="lg-node" data-x="126" data-y="164">
+                        <rect x="96" y="152" width="60" height="24" rx="12"></rect>
+                        <text x="126" y="164">Reply</text>
+                    </g>
+                    <circle class="lg-token" cx="50" cy="40" r="5"></circle>
+                </svg>
+            </div>
+            <div class="band-body">
+                <div class="band-kicker">
+                    <span>Agents</span>
+                    <span class="band-count">LangChain</span>
+                </div>
+                <h3>LangChain &amp; LangGraph</h3>
+                <p>Agentic systems: LangChain tools, LangGraph control flow, and MCP as the interface to external context.</p>
+                <ul class="band-toc">
+                    <li>LangChain</li>
+                    <li>LangGraph</li>
+                    <li>MCP</li>
+                    <li>Python</li>
+                </ul>
+                <span class="band-cta">View repository →</span>
+            </div>
+        </a>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span>© 2026 Ben Thomas</span>
+            <p class="footer-note">Data and physics. Teaching from ESO to Batxillerato to university.</p>
+        </div>
+        <div class="footer-links">
+            <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            <a href="mailto:thomasclubbben@gmail.com">Email</a>
+            <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</footer>
+<script src="js/hero.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
