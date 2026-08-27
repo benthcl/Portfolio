@@ -3,33 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Thermodynamics | Ben Thomas</title>
-    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
 </head>
-<body>
+<body data-page="experiments">
 
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="nav-logo">BT.</a>
-        <div class="nav-links">
-            <a href="theoretical.html">Theory</a>
-            <a href="computational.html">Code</a>
-            <a href="experimental.html" class="active">Experiments</a>
+        <div class="nav-end">
+            <div class="nav-links">
+                <a href="theoretical.html">Theory</a>
+                <a href="computational.html">Code</a>
+                <a href="experimental.html" class="active">Experiments</a>
+                <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            </div>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path></svg>
+            </button>
         </div>
     </div>
 </nav>
 
-<main class="main-container">
-    <a href="experimental.html" class="back-link">&larr; Back to Experiments</a>
-    
-    <header>
-        <h1>Thermodynamics</h1>
-        <p class="subtitle">Experimental Research & Phase Transitions</p>
-        <p class="hero-text">Experimental studies on thermal conductivity, cryogenics, and precise instrumentation calibration.</p>
-    </header>
+<header class="hero-banner">
+    <div class="hero-section">
+        <div class="hero-layout">
+            <div class="hero-copy">
+                <a href="experimental.html" class="back-link">&larr; Back to Experiments</a>
+                <p class="hero-kicker">Thermodynamics</p>
+                <h1>Thermodynamics</h1>
+                <p class="subtitle">Experimental Research &amp; Phase Transitions</p>
+                <p class="hero-text">Experimental studies on thermal conductivity, cryogenics, and precise instrumentation calibration.</p>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="eq-field">
+                    <span class="eq-faint" data-tex="Q=mc\,\Delta T"></span>
+                    <span class="eq-faint" data-tex="P=\sigma T^{4}"></span>
+                </div>
+                <div class="motif motif-aperture">
+                    <span class="ring"></span>
+                    <span class="ring"></span>
+                    <span class="ring"></span>
+                    <div class="motif-lens">
+                        <span class="eq-focus" data-tex="\dfrac{\partial T}{\partial t}=\alpha\nabla^{2}T" data-display="true"></span>
+                        <span class="eq-caption">heat equation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-    <span class="section-label">Selected Reports</span>
+<main class="main-container">
+    <div class="section-head">
+        <p class="section-label">Reports</p>
+        <h2 class="section-title">Heat transport</h2>
+    </div>
 
         <div class="project-card">
             <div class="project-visual">
@@ -67,7 +102,7 @@
                     Determination of the thermal conductivity coefficient for Iron and Copper bars. Utilized the 1D heat transport equation linearized via logarithmic regression to analyze temperature distribution at steady state.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/ConductivitatTermicaMetall.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
+                    <a href="pdfs/ConductivitatTermicaMetall.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -92,15 +127,15 @@
                     <div class="tech-stack"><span class="badge">Calorimetry</span><span class="badge">Thermal Losses</span></div>
                 </div>
                 <p class="project-desc">
-                    Determination of the specific and molar heat capacity of Copper ($C = 317 \pm 6$ J/°C). Developed a thermal loss model to mathematically correct for radiation and convection losses during the heating process.
+                    Determination of the specific and molar heat capacity of Copper (C = 317 ± 6 J/°C). Developed a thermal loss model to mathematically correct for radiation and convection losses during the heating process.
                 </p>
-                <div class="project-links">
-                    <a href="pdfs/CapacitatCalorifica.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
-                </div>
             </div>
         </div>
 
-        <span class="section-label" style="margin-top: 40px; display:block;">Phase Transitions & Cryogenics</span>
+        <div class="section-head spaced">
+            <p class="section-label">Phase</p>
+            <h2 class="section-title">Transitions &amp; cryogenics</h2>
+        </div>
 
         <div class="project-card">
             <div class="project-visual">
@@ -132,7 +167,7 @@
                     Study of the solidification and fusion cycles of water. Captured the <strong>supercooling phenomenon</strong> (meta-stable liquid states at -14°C) and calculated latent heat via numerical integration of the calorimetric signal.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/CalorLatentSolidificacioH20.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
+                    <a href="pdfs/CalorLatentSolidificacioH20.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -155,15 +190,18 @@
                     <div class="tech-stack"><span class="badge">Cryogenics</span><span class="badge">Gravimetry</span></div>
                 </div>
                 <p class="project-desc">
-                    Calculation of the latent heat of Liquid Nitrogen using a gravimetric method ($L = 14 \pm 6$ kJ/mol). Analyzed mass variation over time upon interaction with Copper blocks to determine energy exchange coefficients.
+                    Calculation of the latent heat of Liquid Nitrogen using a gravimetric method (L = 14 ± 6 kJ/mol). Analyzed mass variation over time upon interaction with Copper blocks to determine energy exchange coefficients.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/CalorLatentN2.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
+                    <a href="pdfs/CalorLatentN2.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
 
-        <span class="section-label" style="margin-top: 40px; display:block;">Radiation & Instrumentation</span>
+        <div class="section-head spaced">
+            <p class="section-label">Lab</p>
+            <h2 class="section-title">Radiation &amp; instrumentation</h2>
+        </div>
 
         <div class="project-card">
             <div class="project-visual">
@@ -185,11 +223,8 @@
                     <div class="tech-stack"><span class="badge">Stefan-Boltzmann</span><span class="badge">Non-Linear Regression</span></div>
                 </div>
                 <p class="project-desc">
-                    Analysis of Tungsten filament behavior under high temperature. Confirmed the Stefan-Boltzmann radiation law ($P \propto T^4$) and modeled the temperature-dependence of electrical resistance ($T \propto R^{0.83}$).
+                    Analysis of Tungsten filament behavior under high temperature. Confirmed the Stefan-Boltzmann radiation law (P ∝ T<sup>4</sup>) and modeled the temperature-dependence of electrical resistance (T ∝ R<sup>0.83</sup>).
                 </p>
-                <div class="project-links">
-                    <a href="pdfs/ExperimentalMeasurementConditions.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
-                </div>
             </div>
         </div>
 
@@ -217,10 +252,10 @@
                     <div class="tech-stack"><span class="badge">Instrumentation</span><span class="badge">Sensitivity</span></div>
                 </div>
                 <p class="project-desc">
-                    Calibration of a differential flow calorimeter. Determined the sensitivity curve S(T) across a range of -48°C to 25°C, confirming a linear dependence ($R^2 = 0.994$) for precise energy measurement.
+                    Calibration of a differential flow calorimeter. Determined the sensitivity curve S(T) across a range of −48°C to 25°C, confirming a linear dependence (R² = 0.994) for precise energy measurement.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/CalibratgeCalorimetre.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
+                    <a href="pdfs/CalibratgeCalorimetre.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -246,12 +281,28 @@
                     Determination of the electromotive force (EMF) vs. temperature curve. Fitted experimental data to a second-order polynomial with rigorous error propagation analysis.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/CalibrategeTermoaparell.pdf" target="_blank" class="btn-text"><i class="fas fa-file-pdf"></i> Read Report</a>
+                    <a href="pdfs/CalibrategeTermoaparell.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
 
     </main>
 
+<footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+                <span>© 2026 Ben Thomas</span>
+                <p class="footer-note">Physics, mathematics, and computation.</p>
+            </div>
+            <div class="footer-links">
+            <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            <a href="mailto:thomasclubbben@gmail.com">Email</a>
+            <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="js/tex.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>

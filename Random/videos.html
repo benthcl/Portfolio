@@ -3,60 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Visualizations | Ben Thomas</title>
-    
-    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body data-page="code">
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="../index.html" class="nav-logo" aria-label="Home">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-        </a>
-        
-        <div class="nav-links">
-            <a href="../cv.html">CV & Projects</a>
-            <a href="hub.html" class="active">The Archive</a>
+        <a href="../index.html" class="nav-logo">BT.</a>
+        <div class="nav-end">
+            <div class="nav-links">
+                <a href="../theoretical.html">Theory</a>
+                <a href="../computational.html">Code</a>
+                <a href="../experimental.html">Experiments</a>
+                <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            </div>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path></svg>
+            </button>
         </div>
     </div>
 </nav>
-    <header class="hero-section" style="margin-bottom: 40px; padding-bottom: 20px;">
+
+<header class="hero-banner">
+    <div class="hero-section">
+        <p class="hero-kicker">Visuals</p>
         <h1>Visualizations</h1>
-        <p class="subtitle">Manim</p>
-    </header>
+        <p class="subtitle">Manim animations — coming soon</p>
+    </div>
+</header>
 
-    <div class="main-container">
-        <div class="topic-grid">
-
-            <div class="topic-card" style="height: auto; cursor: default;">
-                <div class="video-placeholder">
-                    [Insert Video 1 Here]
-                </div>
-
-                <h3>[Project Title 1]</h3>
-                <p>[Description of what this animation demonstrates]</p>
-                
-                <span class="card-link-text" style="cursor: pointer;">View Python Code →</span>
-            </div>
-
-            <div class="topic-card" style="height: auto; cursor: default;">
-                <div class="video-placeholder">
-                    [Insert Video 2 Here]
-                </div>
-
-                <h3>[Project Title 2]</h3>
-                <p>[Description of what this animation demonstrates]</p>
-                
-                <span class="card-link-text" style="cursor: pointer;">View Python Code →</span>
-            </div>
-
+<main class="main-container">
+    <div class="section-head">
+        <p class="section-label">Library</p>
+        <h2 class="section-title">Forthcoming animations</h2>
+    </div>
+    <div class="topic-grid">
+        <div class="topic-card">
+            <div class="video-placeholder">Preview forthcoming</div>
+            <h3>Animation series</h3>
+            <p>Illustrated derivations and numerical experiments rendered with Manim.</p>
+        </div>
+        <div class="topic-card">
+            <div class="video-placeholder">Preview forthcoming</div>
+            <h3>Numerical demos</h3>
+            <p>Short visual proofs of solvers, orbits, and wave phenomena.</p>
         </div>
     </div>
+</main>
 
+<footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+                <span>© 2026 Ben Thomas</span>
+                <p class="footer-note">Physics, mathematics, and computation.</p>
+            </div>
+            <div class="footer-links">
+            <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            <a href="mailto:thomasclubbben@gmail.com">Email</a>
+            <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</footer>
+<script src="../js/theme.js"></script>
 </body>
 </html>

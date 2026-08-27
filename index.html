@@ -3,86 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Ben Thomas — theoretical physics, computational modeling, experimental research, and teaching.">
     <title>Ben Thomas | Physics, Mathematics & Computation</title>
-    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
 </head>
-<body>
+<body data-page="home">
 
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">BT.</a>
-            <div class="nav-links">
-                <a href="theoretical.html">Theory</a>
-                <a href="computational.html">Code</a>
-                <a href="experimental.html">Experiments</a>
+            <div class="nav-end">
+                <div class="nav-links">
+                    <a href="theoretical.html">Theory</a>
+                    <a href="computational.html">Code</a>
+                    <a href="experimental.html">Experiments</a>
+                    <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+                </div>
+                <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path></svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section">
-        <h1>Ben Thomas</h1>
-        <p class="subtitle">Physics | Mathematics | Computation</p>
-        <p class="hero-text">
-            Welcome to my personal archive. I am passionate about exploring complex 
-            systems through rigorous mathematical derivation, computational modeling, and empirical analysis.
-        </p>
-        
-        <div class="hero-cta">
-            <a href="mailto:thomasclubbben@gmail.com" class="btn-primary">Contact Me</a>
-            <a href="https://github.com/benthcl" target="_blank" class="btn-secondary">GitHub &rarr;</a>
+    <header class="hero-banner">
+        <div class="hero-section">
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <p class="hero-kicker">Portfolio</p>
+                    <h1>Ben Thomas</h1>
+                    <p class="subtitle">Physics · Mathematics · Computation</p>
+                    <p class="hero-text">
+                        I work from first principles through to working models: covariant derivations,
+                        numerical solvers, and laboratory measurement. I also teach those same tools
+                        to students who want the subject, not the shortcut.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="mailto:thomasclubbben@gmail.com" class="btn-primary">Contact</a>
+                        <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="eq-field">
+                        <span class="eq-faint" data-tex="R_{\mu\nu}-\tfrac{1}{2}Rg_{\mu\nu}"></span>
+                        <span class="eq-faint" data-tex="y_{n+1}=y_n+hf(t_n,y_n)"></span>
+                        <span class="eq-faint" data-tex="I\propto\cos^{2}\theta"></span>
+                    </div>
+                    <div class="motif motif-terminal motif-workbench" data-workbench data-beat="0">
+                        <div class="term-bar">
+                            <div class="term-dots"><span></span><span></span><span></span></div>
+                            <div class="wb-tabs">
+                                <span class="wb-tab is-active">Derivation</span>
+                                <span class="wb-tab">Solver</span>
+                                <span class="wb-tab">Measurement</span>
+                            </div>
+                        </div>
+                        <div class="wb-pane">
+                            <span class="eq-focus" hidden data-display="true"></span>
+                            <pre class="term-code" hidden><code></code></pre>
+                            <div class="wb-meter" hidden>
+                                <div class="wb-meter-top">
+                                    <svg class="wb-polarizer" viewBox="0 0 120 72">
+                                        <circle cx="36" cy="36" r="24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.28"></circle>
+                                        <line class="wb-pol-fixed" x1="36" y1="12" x2="36" y2="60" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></line>
+                                        <line class="wb-pol-rot" x1="36" y1="12" x2="36" y2="60" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></line>
+                                        <line class="wb-beam" x1="64" y1="36" x2="112" y2="36" stroke="currentColor" stroke-width="5" stroke-linecap="round"></line>
+                                    </svg>
+                                    <div class="wb-meter-read">
+                                        <span>θ <strong data-wb-theta>0°</strong></span>
+                                        <span>I/I₀ <strong data-wb-ii0>1.00</strong></span>
+                                    </div>
+                                </div>
+                                <div class="wb-intensity"><i data-wb-bar></i></div>
+                            </div>
+                        </div>
+                        <span class="eq-caption">derivation</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="main-container">
-        <span class="section-label">Browse Content</span>
+        <div class="section-head">
+            <p class="section-label">Browse</p>
+            <h2 class="section-title">Fields of work</h2>
+        </div>
 
-        <div class="topic-grid">
-            
-            <a href="theoretical.html" class="topic-card">
-                <div>
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
-                            <path d="M8 7h8"></path>
-                            <path d="M8 11h8"></path>
-                        </svg>
+        <div class="archive-bands">
+
+            <a href="theoretical.html" class="archive-band topic-theory">
+                <div class="band-widget" data-card-widget="theory" aria-hidden="true">
+                    <svg class="card-worldlines" viewBox="0 0 280 160" preserveAspectRatio="none">
+                        <path class="wl wl-a" d="M8 120 Q 80 24 160 90 T 272 48" fill="none" stroke="currentColor" stroke-width="1.4"></path>
+                        <path class="wl wl-b" d="M8 48 Q 90 140 170 72 T 272 120" fill="none" stroke="currentColor" stroke-width="1.4"></path>
+                    </svg>
+                    <span class="card-widget-eq" data-display="true"></span>
+                </div>
+                <div class="band-body">
+                    <div class="band-kicker">
+                        <span>Theory</span>
+                        <span class="band-count">6 notes</span>
                     </div>
-                    <h3>Theoretical Physics & Mathematics</h3>
-                    <p>Formal tensor calculus, differential geometry, and analytical derivations.</p>
+                    <h3>Theoretical Physics</h3>
+                    <p>Covariant electrodynamics, variational field theory, and relativistic mechanics — written as notes you can follow.</p>
+                    <ul class="band-toc">
+                        <li>Covariant Maxwell</li>
+                        <li>Hilbert energy-momentum</li>
+                        <li>Quadrupole radiation</li>
+                        <li>Lense–Thirring</li>
+                        <li>Geometry of S²</li>
+                        <li>Mercury precession</li>
+                    </ul>
+                    <span class="band-cta">Open the notes →</span>
                 </div>
-                <span class="card-link-text">View Expository Notes &rarr;</span>
             </a>
 
-            <a href="computational.html" class="topic-card">
-                <div>
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
+            <a href="computational.html" class="archive-band topic-code">
+                <div class="band-widget band-widget-code" data-card-widget="code" aria-hidden="true">
+                    <div class="band-term">
+                        <div class="term-dots"><span></span><span></span><span></span></div>
+                        <pre class="term-code band-code"><code></code></pre>
                     </div>
-                    <h3>Computational Physics & Software</h3>
-                    <p>Numerical simulations, optimization engines, and PDE solvers.</p>
                 </div>
-                <span class="card-link-text">View Source Code &rarr;</span>
+                <div class="band-body">
+                    <div class="band-kicker">
+                        <span>Computation</span>
+                        <span class="band-count">5 works</span>
+                    </div>
+                    <h3>Computational Physics</h3>
+                    <p>Solvers, simulations, and optimization engines that put the equations on a grid.</p>
+                    <ul class="band-toc">
+                        <li>Physics Core</li>
+                        <li>Fabry–Pérot</li>
+                        <li>Airport flow</li>
+                        <li>Sectorization GA</li>
+                        <li>This site</li>
+                    </ul>
+                    <span class="band-cta">View the projects →</span>
+                </div>
             </a>
 
-            <a href="experimental.html" class="topic-card">
-                <div>
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
-                    </div> 
-                    <h3>Experimental Physics & Engineering</h3>
-                    <p>Hardware metrology, signal processing, and laboratory analysis.</p>
+            <a href="experimental.html" class="archive-band topic-experiments">
+                <div class="band-widget band-widget-lab" data-card-widget="lab" aria-hidden="true">
+                    <svg class="band-scope" viewBox="0 0 280 160" preserveAspectRatio="xMidYMid meet">
+                        <g class="scope-grid" fill="none" stroke="currentColor">
+                            <rect x="16" y="16" width="248" height="112" rx="4"></rect>
+                            <path d="M16 72 H264 M140 16 V128 M78 16 V128 M202 16 V128 M16 44 H264 M16 100 H264"></path>
+                        </g>
+                        <path class="scope-trace" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M20 72 C 44 72 52 28 76 28 S 108 116 132 116 S 164 28 188 28 S 220 72 244 72 S 260 72 260 72"></path>
+                        <line class="scope-scan" x1="20" y1="16" x2="20" y2="128" stroke="currentColor"></line>
+                        <text class="scope-read" x="20" y="150">CH1 · 5 mV/div</text>
+                    </svg>
                 </div>
-                <span class="card-link-text">View Research Reports &rarr;</span>
+                <div class="band-body">
+                    <div class="band-kicker">
+                        <span>Laboratory</span>
+                        <span class="band-count">16 reports</span>
+                    </div>
+                    <h3>Experimental Physics</h3>
+                    <p>Measurement first, then the model — optics, heat, and aerospace systems.</p>
+                    <ul class="band-toc">
+                        <li class="band-toc-group">Optics · 6</li>
+                        <li class="band-toc-group">Thermodynamics · 7</li>
+                        <li class="band-toc-group">Aerospace · 3</li>
+                        <li>Michelson</li>
+                        <li>Malus</li>
+                        <li>N₂ latent heat</li>
+                    </ul>
+                    <span class="band-cta">View the reports →</span>
+                </div>
             </a>
+
+            <div class="archive-band topic-teach is-soon" aria-disabled="true">
+                <div class="band-widget band-widget-book" data-card-widget="teach" data-book aria-hidden="true">
+                    <span class="book-leaf book-leaf-back"></span>
+                    <span class="book-leaf book-leaf-mid"></span>
+                    <div class="book-page">
+                        <span class="eq-focus" data-tex="\oint_{S}\mathbf{E}\cdot d\mathbf{A}=\dfrac{Q_{\mathrm{enc}}}{\varepsilon_0}" data-display="true"></span>
+                        <span class="eq-caption">Gauss's law</span>
+                    </div>
+                </div>
+                <div class="band-body">
+                    <div class="band-kicker">
+                        <span>Teaching</span>
+                        <span class="band-count">Coming soon</span>
+                    </div>
+                    <h3>Education</h3>
+                    <p>The same tools, taught: careful derivation, a working method, and how an experiment settles it.</p>
+                    <ul class="band-toc">
+                        <li>Tutoring</li>
+                        <li>Notes archive</li>
+                        <li>Workshops</li>
+                    </ul>
+                    <span class="band-cta">Coming soon</span>
+                </div>
+            </div>
 
         </div>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span>© 2026 Ben Thomas</span>
+                <p class="footer-note">Physics, mathematics, and computation.</p>
+            </div>
+            <div class="footer-links">
+                <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+                <a href="mailto:thomasclubbben@gmail.com">Email</a>
+                <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script src="js/tex.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>

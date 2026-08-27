@@ -3,45 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>The Archive | Ben Thomas</title>
-    
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body data-page="archive">
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="../index.html" class="nav-logo" aria-label="Home">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-        </a>
-        
-        <div class="nav-links">
-            <!--<a href="hub.html" class="active">The Archive</a>-->
-            <a href="projects.html">Experimental & Theoretical Analysis</a>
-            <a href="projects.html">Computational Physics & Software</a>
-            <a href="../cv.html">CV</a>
+        <a href="../index.html" class="nav-logo">BT.</a>
+        <div class="nav-end">
+            <div class="nav-links">
+                <a href="../theoretical.html">Theory</a>
+                <a href="../computational.html">Code</a>
+                <a href="../experimental.html">Experiments</a>
+                <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            </div>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path></svg>
+            </button>
         </div>
     </div>
 </nav>
 
-<header class="hero-section">
-    <h1>The Archive</h1>
-    <p class="subtitle">Notes, Derivations & Reports</p>
+<header class="hero-banner">
+    <div class="hero-section">
+        <p class="hero-kicker">Notes</p>
+        <h1>The Archive</h1>
+        <p class="subtitle">Notes, derivations &amp; reports</p>
+    </div>
 </header>
 
 <div class="archive-container">
-    
+
     <div class="archive-section">
-        <div class="archive-header">Theoretical Physics & Math</div>
-        
+        <div class="section-head">
+            <p class="section-label">Theory</p>
+            <h2 class="section-title">Physics &amp; mathematics</h2>
+        </div>
         <div class="journal-table">
-            
-            <a href="../pdfs/BenThomas_Lense-Thirring.pdf" target="_blank" class="journal-row">
+            <a href="../pdfs/BenThomas_Lense-Thirring.pdf" target="_blank" rel="noopener noreferrer" class="journal-row">
                 <div class="journal-date">2026</div>
                 <div class="journal-info">
                     <span class="journal-title">Derivation of the Lense-Thirring Metric</span>
@@ -52,49 +58,49 @@
                     </div>
                 </div>
                 <div class="journal-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                 </div>
             </a>
 
-            <a href="../pdfs/BenThomasCA1_Trabajo.pdf" target="_blank" class="journal-row">
+            <a href="../pdfs/ErrorControlSystems.pdf" target="_blank" rel="noopener noreferrer" class="journal-row">
                 <div class="journal-date">2023</div>
                 <div class="journal-info">
-                    <span class="journal-title">Error Control Systems: Hamming & Reed-Solomon</span>
+                    <span class="journal-title">Error Control Systems: Hamming &amp; Reed-Solomon</span>
                     <div class="journal-tags">
                         <span>Information Theory</span>
                         <span>Algebra</span>
                     </div>
                 </div>
                 <div class="journal-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                 </div>
             </a>
-
         </div>
     </div>
 
-
     <div class="archive-section">
-        <div class="archive-header">Foundations</div>
-        
+        <div class="section-head">
+            <p class="section-label">Foundations</p>
+            <h2 class="section-title">Earlier notes</h2>
+        </div>
         <div class="journal-table">
-            <a href="#" class="journal-row">
+            <div class="journal-row is-static">
                 <div class="journal-date">2022</div>
                 <div class="journal-info">
                     <span class="journal-title">Calculus I: Derivatives</span>
                     <div class="journal-tags"><span>Mathematics</span></div>
                 </div>
-                <div class="journal-icon">→</div>
-            </a>
-            <a href="#" class="journal-row">
+                <div class="journal-icon">—</div>
+            </div>
+            <div class="journal-row is-static">
                 <div class="journal-date">2022</div>
                 <div class="journal-info">
-                    <span class="journal-title">Physics: Vectors & Forces</span>
+                    <span class="journal-title">Physics: Vectors &amp; Forces</span>
                     <div class="journal-tags"><span>Mechanics</span></div>
                 </div>
-                <div class="journal-icon">→</div>
-            </a>
-            <a href="../pdfs/tiroparabolico.pdf" target="_blank" class="journal-row">
+                <div class="journal-icon">—</div>
+            </div>
+            <a href="../pdfs/tiroparabolico.pdf" target="_blank" rel="noopener noreferrer" class="journal-row">
                 <div class="journal-date">2026</div>
                 <div class="journal-info">
                     <span class="journal-title">Kinematics of Projectile Motion</span>
@@ -105,25 +111,40 @@
                     </div>
                 </div>
                 <div class="journal-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                 </div>
             </a>
-            <a href="../pdfs/SphereAndCircleArea.pdf" target="_blank" class="journal-row">
-            <div class="journal-date">2023</div>
-            <div class="journal-info">
-                <span class="journal-title">Analytical Derivation of Spherical Surface Area</span>
-                <div class="journal-tags">
-                    <span>Calculus</span>
-                    <span>Geometry</span>
-                    <span>Integration</span>
+            <a href="../pdfs/SphereAndCircleArea.pdf" target="_blank" rel="noopener noreferrer" class="journal-row">
+                <div class="journal-date">2023</div>
+                <div class="journal-info">
+                    <span class="journal-title">Analytical Derivation of Spherical Surface Area</span>
+                    <div class="journal-tags">
+                        <span>Calculus</span>
+                        <span>Geometry</span>
+                        <span>Integration</span>
+                    </div>
                 </div>
-            </div>
-            <div class="journal-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            </div>
+                <div class="journal-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                </div>
             </a>
         </div>
     </div>
 </div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+                <span>© 2026 Ben Thomas</span>
+                <p class="footer-note">Physics, mathematics, and computation.</p>
+            </div>
+            <div class="footer-links">
+            <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            <a href="mailto:thomasclubbben@gmail.com">Email</a>
+            <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</footer>
+<script src="../js/theme.js"></script>
 </body>
 </html>

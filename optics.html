@@ -3,35 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Optics Research | Ben Thomas</title>
-    <link href="https://fonts.cdnfonts.com/css/computer-modern-serif" rel="stylesheet">
+    <script>
+      (function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
 </head>
-<body>
+<body data-page="experiments">
 
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="nav-logo">BT.</a>
-        <div class="nav-links">
-            <a href="theoretical.html">Theory</a>
-            <a href="computational.html">Code</a>
-            <a href="experimental.html" class="active">Experiments</a>
+        <div class="nav-end">
+            <div class="nav-links">
+                <a href="theoretical.html">Theory</a>
+                <a href="computational.html">Code</a>
+                <a href="experimental.html" class="active">Experiments</a>
+                <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            </div>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path></svg>
+            </button>
         </div>
     </div>
 </nav>
 
-<main class="main-container">
-    <a href="experimental.html" class="back-link">&larr; Back to Experiments</a>
-    
-    <header>
-        <h1>Optics & Photonics</h1>
-        <p class="subtitle">Experimental Research & Metrology</p>
-        <p class="hero-text">
-            Rigorous analysis of wave phenomena using non-linear regression to validate theoretical models of interference and diffraction.
-        </p>
-    </header>
+<header class="hero-banner">
+    <div class="hero-section">
+        <div class="hero-layout">
+            <div class="hero-copy">
+                <a href="experimental.html" class="back-link">&larr; Back to Experiments</a>
+                <p class="hero-kicker">Optics</p>
+                <h1>Optics &amp; Photonics</h1>
+                <p class="subtitle">Experimental Research &amp; Metrology</p>
+                <p class="hero-text">
+                    Rigorous analysis of wave phenomena using non-linear regression to validate theoretical models of interference and diffraction.
+                </p>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="eq-field">
+                    <span class="eq-faint" data-tex="I=I_0\cos^{2}\theta"></span>
+                    <span class="eq-faint" data-tex="n\sin\theta=\mathrm{const}"></span>
+                </div>
+                <div class="motif motif-aperture">
+                    <span class="ring"></span>
+                    <span class="ring"></span>
+                    <span class="ring"></span>
+                    <div class="motif-lens">
+                        <span class="eq-focus" data-tex="\Delta\phi=\dfrac{4\pi}{\lambda}\Delta L" data-display="true"></span>
+                        <span class="eq-caption">Michelson</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-    <span class="section-label">Selected Reports</span>
+<main class="main-container">
+    <div class="section-head">
+        <p class="section-label">Reports</p>
+        <h2 class="section-title">Selected papers</h2>
+    </div>
 
         <div class="project-card">
             <div class="project-visual">
@@ -60,9 +95,7 @@
                     interference ring collapse analysis.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/OpticaMichelson.pdf" target="_blank" class="btn-text">
-                        <i class="fas fa-file-pdf"></i> Read Report
-                    </a>
+                    <a href="pdfs/OpticaMichelson.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -90,9 +123,7 @@
                     intensity profiles using CCD sensor data.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/OpticaFraunhofer.pdf" target="_blank" class="btn-text">
-                        <i class="fas fa-file-pdf"></i> Read Report
-                    </a>
+                    <a href="pdfs/OpticaFraunhofer.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -123,9 +154,7 @@
                     parameters for quarter-wave plate retardation.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/OpticaPolarització.pdf" target="_blank" class="btn-text">
-                        <i class="fas fa-file-pdf"></i> Read Report
-                    </a>
+                    <a href="pdfs/OpticaPolaritzacio.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -153,9 +182,7 @@
                     regression.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/OpticaReflMedis.pdf" target="_blank" class="btn-text">
-                        <i class="fas fa-file-pdf"></i> Read Report
-                    </a>
+                    <a href="pdfs/OpticaReflMedis.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -186,9 +213,7 @@
                     emission spectra peaks and generating calibration curves.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/OpticaEspectrometria.pdf" target="_blank" class="btn-text">
-                        <i class="fas fa-file-pdf"></i> Read Report
-                    </a>
+                    <a href="pdfs/OpticaEspectrometria.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
@@ -226,14 +251,28 @@
                     spatial coherence and chromatic dispersion effects.
                 </p>
                 <div class="project-links">
-                    <a href="pdfs/OpticaYoung.pdf" target="_blank" class="btn-text">
-                        <i class="fas fa-file-pdf"></i> Read Report
-                    </a>
+                    <a href="pdfs/OpticaYoung.pdf" target="_blank" rel="noopener noreferrer" class="btn-text">Read report →</a>
                 </div>
             </div>
         </div>
 
     </main>
 
+<footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+                <span>© 2026 Ben Thomas</span>
+                <p class="footer-note">Physics, mathematics, and computation.</p>
+            </div>
+            <div class="footer-links">
+            <span class="is-soon" aria-disabled="true" title="Coming soon">Education</span>
+            <a href="mailto:thomasclubbben@gmail.com">Email</a>
+            <a href="https://github.com/benthcl" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="js/tex.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
